@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Building 4
+  m_Name: Pink building
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
@@ -373,10 +373,10 @@ Material:
     - _OcclusionStrength: 1
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
-    - _Offset_Z: 0
+    - _Offset_Z: -1.8
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 15
+    - _Outline_Width: 0.08
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -478,15 +478,15 @@ Material:
     - _utsVersionY: 8
     - _utsVersionZ: 2
     m_Colors:
-    - _1st_ShadeColor: {r: 0.6698113, g: 0.2748754, b: 0.41129658, a: 1}
-    - _2nd_ShadeColor: {r: 0.5471698, g: 0.28648984, b: 0.40248773, a: 1}
+    - _1st_ShadeColor: {r: 0.6117647, g: 0.24705882, b: 0.64705884, a: 1}
+    - _2nd_ShadeColor: {r: 0.30929923, g: 0.08018868, b: 0.3207547, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.8773585, g: 0.39315593, b: 0.5244725, a: 1}
+    - _BaseColor: {r: 0.9339623, g: 0.5176471, b: 0.8434017, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.8773585, g: 0.3931559, b: 0.5244724, a: 1}
+    - _Color: {r: 0.9339623, g: 0.517647, b: 0.8434017, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
