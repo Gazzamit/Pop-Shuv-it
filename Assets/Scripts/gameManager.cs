@@ -6,7 +6,7 @@ using TMPro;
 
 public class gameManager : MonoBehaviour
 {
-    public AudioSource music;
+    public AudioSource music; 
     public bool startPlaying;
     public beatScroller theBS;
 
@@ -102,5 +102,21 @@ public class gameManager : MonoBehaviour
         currentMultiplier = 1;
         multiplierTracker = 0;
         scoreText.text = "Score: " + currentScore;
+    }
+
+    public void CompleteLevel()
+    {
+        Debug.Log("Completed level and saved progress: " + LevelManager.Instance.currentLevel);
+        SaveManager.Instance.CompleteLevel(LevelManager.Instance.currentLevel);
+
+        //Focus the level selection after game play
+        LevelManager.Instance.menuFocus = 1;
+
+        ExitScene();
+    }
+
+    public void ExitScene()
+    {   
+        SceneManager.LoadScene("Menu");
     }
 }
