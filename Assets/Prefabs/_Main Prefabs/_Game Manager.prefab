@@ -54,6 +54,8 @@ MonoBehaviour:
   currentMultiplier: 0
   multiplierTracker: 0
   multiplierThreshold: 040000000800000010000000
+  fadeGroup: {fileID: 0}
+  fadeInDuration: 1
 --- !u!1 &1301433851685156098
 GameObject:
   m_ObjectHideFlags: 0
