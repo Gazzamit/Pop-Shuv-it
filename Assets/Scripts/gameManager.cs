@@ -22,6 +22,9 @@ public class gameManager : MonoBehaviour
     public int multiplierTracker;
     public int[] multiplierThreshold; 
 
+    public CanvasGroup fadeGroup; //for fade-in using fade alpha
+    public float fadeInDuration = 1f; // fade-in time
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,13 +33,27 @@ public class gameManager : MonoBehaviour
         scoreText.text = "Score 0";
 
         currentMultiplier = 1;
+
+        fadeGroup = FindObjectOfType<CanvasGroup>();
+
+        // set fade to 1
+        fadeGroup.alpha = 1;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if (!startPlaying)
+    {       
+        if( Time.timeSinceLevelLoad <= fadeInDuration )
         {
+            // Initial Fade-in
+            fadeGroup.alpha = 1 - (Time.timeSinceLevelLoad / fadeInDuration);
+
+        }
+        
+        else if (!startPlaying)
+        {
+            fadeGroup.alpha = 0; //ensure alpha is zero on game start
+            
             if (Input.anyKeyDown)
             {
                 startPlaying = true;
