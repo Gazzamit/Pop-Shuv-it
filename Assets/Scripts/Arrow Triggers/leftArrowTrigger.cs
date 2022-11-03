@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class leftArrowTrigger : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class leftArrowTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             //Have a missed arrow and end combo trigger here
+            playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
             gameManager.instance.NoteMissed();
             gameObject.SetActive(false);
            
