@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue 2
+  m_Name: Window Blue
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
@@ -219,9 +219,9 @@ Material:
     m_Floats:
     - _1st2nd_Shades_Feather: 0.0001
     - _1st_ShadeColor_Feather: 0.0001
-    - _1st_ShadeColor_Step: 0.5
+    - _1st_ShadeColor_Step: 0.625
     - _2nd_ShadeColor_Feather: 0.0001
-    - _2nd_ShadeColor_Step: 0
+    - _2nd_ShadeColor_Step: 0.244
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ARSampler_AlphaOn: 0
@@ -249,7 +249,7 @@ Material:
     - _AutoRenderQueue: 1
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
-    - _BaseColor_Step: 0.5
+    - _BaseColor_Step: 0.625
     - _BaseShade_Feather: 0.0001
     - _Base_Speed: 0
     - _BlendMode: 0
@@ -373,10 +373,10 @@ Material:
     - _OcclusionStrength: 1
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
-    - _Offset_Z: -0.68
+    - _Offset_Z: -1.2
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 0.8
+    - _Outline_Width: 0.12
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -402,7 +402,7 @@ Material:
     - _SecondShadeOverridden: 0
     - _SecondShadeVisible: 1
     - _Set_SystemShadowsToBase: 1
-    - _ShadeColor_Step: 0
+    - _ShadeColor_Step: 0.244
     - _Smoothness: 0.5
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
@@ -427,7 +427,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 64
     - _StencilWriteMaskGBuffer: 3
     - _StencilWriteMaskMV: 128
-    - _StepOffset: 0
+    - _StepOffset: 0.047
     - _SubsurfaceMask: 1
     - _SupportDecals: 1
     - _SurfaceType: 0
@@ -478,15 +478,15 @@ Material:
     - _utsVersionY: 8
     - _utsVersionZ: 2
     m_Colors:
-    - _1st_ShadeColor: {r: 0.20799218, g: 0.34691373, b: 0.3584906, a: 1}
-    - _2nd_ShadeColor: {r: 0.103462085, g: 0.25076368, b: 0.2924528, a: 1}
+    - _1st_ShadeColor: {r: 0.20185119, g: 0.36783755, b: 0.6792453, a: 1}
+    - _2nd_ShadeColor: {r: 0.06755074, g: 0.21889351, b: 0.4339623, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.20870416, g: 0.36935064, b: 0.6603774, a: 1}
+    - _BaseColor: {r: 0.51793337, g: 0.78370947, b: 0.9716981, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.20870411, g: 0.3693506, b: 0.6603774, a: 1}
+    - _Color: {r: 0.51793337, g: 0.78370947, b: 0.9716981, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
@@ -502,7 +502,7 @@ Material:
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineMaskColor: {r: 0, g: 0, b: 0, a: 1}
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 1, g: 0.68825716, b: 0.19339621, a: 1}
+    - _RimLightColor: {r: 0.9622642, g: 0.7526493, b: 0.24964403, a: 1}
     - _RimLightMaskColor: {r: 1, g: 0, b: 1, a: 1}
     - _SecondShadeMaskColor: {r: 0, g: 0, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}

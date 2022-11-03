@@ -7,6 +7,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BLACK
+    second: {fileID: 2100000, guid: 902a9b419ebb94c3498b05fed5fc54d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BLACK.001
+    second: {fileID: 2100000, guid: 902a9b419ebb94c3498b05fed5fc54d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BLACK.002
+    second: {fileID: 2100000, guid: 902a9b419ebb94c3498b05fed5fc54d8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: BLUE
     second: {fileID: 2100000, guid: d897e1565f32d4150a3b29725fc0db10, type: 2}
   - first:
@@ -22,6 +37,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BLUE.003
+    second: {fileID: 2100000, guid: a6e67f10ad91d419597be050b332ecd0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DARK BLUE
+    second: {fileID: 2100000, guid: 38e31ddb24ed044c2ad47237a385da26, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Orange
     second: {fileID: 2100000, guid: 46028e926087c4685bf1430be7fc41ef, type: 2}
   - first:
@@ -34,6 +59,31 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: WHITE
     second: {fileID: 2100000, guid: 3da223eb69a5c40b79ac806a5cc7615e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WHITE.001
+    second: {fileID: 2100000, guid: 3da223eb69a5c40b79ac806a5cc7615e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WHITE.003
+    second: {fileID: 2100000, guid: d9bb161c027814ce1bebec8e5d01dde5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window
+    second: {fileID: 2100000, guid: 5ee8bea6771fb4a3a9cc79f06a0c1d25, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: darker blue
+    second: {fileID: 2100000, guid: 66832b7b66d3e464cbd1e1c0a5a08cc5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: light blue
+    second: {fileID: 2100000, guid: 471f2a555a97149a7af1c4940876baa0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

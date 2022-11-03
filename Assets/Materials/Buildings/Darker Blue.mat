@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue 2
+  m_Name: Darker Blue
   m_Shader: {fileID: 4800000, guid: be891319084e9d147b09d89e80ce60e0, type: 3}
   m_ValidKeywords:
   - _EMISSIVE_SIMPLE
@@ -303,7 +303,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _Farthest_Distance: 10
+    - _Farthest_Distance: 100
     - _FirstShadeOverridden: 0
     - _FirstShadeVisible: 1
     - _GI_Intensity: 0
@@ -373,10 +373,10 @@ Material:
     - _OcclusionStrength: 1
     - _Offset_X_Axis_BLD: -0.05
     - _Offset_Y_Axis_BLD: 0.09
-    - _Offset_Z: -0.68
+    - _Offset_Z: 0
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 0.8
+    - _Outline_Width: 0
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
@@ -448,7 +448,7 @@ Material:
     - _TweakHighColorOnShadow: 0
     - _TweakMatCapOnShadow: 0
     - _Tweak_HighColorMaskLevel: 0
-    - _Tweak_LightDirection_MaskLevel: 0
+    - _Tweak_LightDirection_MaskLevel: 0.02
     - _Tweak_MatCapUV: 0
     - _Tweak_MatcapMaskLevel: 0
     - _Tweak_RimLightMaskLevel: 0
@@ -478,15 +478,15 @@ Material:
     - _utsVersionY: 8
     - _utsVersionZ: 2
     m_Colors:
-    - _1st_ShadeColor: {r: 0.20799218, g: 0.34691373, b: 0.3584906, a: 1}
-    - _2nd_ShadeColor: {r: 0.103462085, g: 0.25076368, b: 0.2924528, a: 1}
+    - _1st_ShadeColor: {r: 0.17225882, g: 0.28547916, b: 0.745283, a: 1}
+    - _2nd_ShadeColor: {r: 0.0985226, g: 0.19441505, b: 0.509434, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.20870416, g: 0.36935064, b: 0.6603774, a: 1}
+    - _BaseColor: {r: 0.23642756, g: 0.38983032, b: 0.7264151, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.20870411, g: 0.3693506, b: 0.6603774, a: 1}
+    - _Color: {r: 0.23642752, g: 0.38983026, b: 0.7264151, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
@@ -501,8 +501,8 @@ Material:
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _MatCapColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineMaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _RimLightColor: {r: 1, g: 0.68825716, b: 0.19339621, a: 1}
+    - _Outline_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _RimLightColor: {r: 0.9056604, g: 0.61888915, b: 0.14097545, a: 1}
     - _RimLightMaskColor: {r: 1, g: 0, b: 1, a: 1}
     - _SecondShadeMaskColor: {r: 0, g: 0, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
