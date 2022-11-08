@@ -4513,7 +4513,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7304091991451871947, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7336550085291291663, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
@@ -4573,7 +4573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8361090652813352206, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8589634438264843012, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_LocalScale.x
@@ -4922,7 +4922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1222967298135485826, guid: d194ca87f670647f19e88e18fef7af90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1222967298135485826, guid: d194ca87f670647f19e88e18fef7af90, type: 3}
       propertyPath: m_LocalPosition.z
