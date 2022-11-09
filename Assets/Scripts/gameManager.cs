@@ -15,6 +15,13 @@ public class gameManager : MonoBehaviour
 
     public int currentScore;
     public int scorePerNote = 100;
+    public int scorePerGoodNote = 125;
+    public int scorePerPerfectNote = 150;
+    public float totalArrows, normalHits, goodHits, perfectHits, missedHits;
+    public GameObject ArrowsParent;
+
+    public static float perfectPercent = 20f; //hit accuracy
+    public static float goodPercent = 50f; //hit accuracy
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI multiplierText;
@@ -35,7 +42,10 @@ public class gameManager : MonoBehaviour
 
         currentMultiplier = 1;
 
-        fadeGroup = FindObjectOfType<CanvasGroup>();
+        totalArrows = ArrowsParent.transform.childCount; //count notes
+        //Debug.Log("Total Arrows: " + totalArrows);
+
+        fadeGroup = FindObjectOfType<CanvasGroup>(); // find canvas group for alpha fade
 
         // set fade to 1
         fadeGroup.alpha = 1;
@@ -68,7 +78,7 @@ public class gameManager : MonoBehaviour
 
     public void NoteHit()
     {
-        Debug.Log("Hit on Time");
+        //Debug.Log("Hit on Time");
 
         if (currentMultiplier - 1 < multiplierThreshold.Length)
         {
@@ -82,10 +92,36 @@ public class gameManager : MonoBehaviour
 
             multiplierText.text = "Multiplier: x" + currentMultiplier;
 
-            currentScore += scorePerNote * currentMultiplier;
+            //currentScore += scorePerNote * currentMultiplier; //see below for variety of hits
             scoreText.text = "Score: " + currentScore;        
         }
     }
+
+    public void NormalHit()
+    {
+        Debug.Log("Normal Hit");
+        currentScore += scorePerNote * currentMultiplier; 
+        NoteHit();
+        normalHits++;
+    }
+
+    public void GoodHit()
+    {
+        Debug.Log("Good Hit");
+        currentScore += scorePerGoodNote * currentMultiplier; 
+        NoteHit();
+        goodHits++;
+    }
+
+    public void PerfectHit()
+    {
+        Debug.Log("Perfect Hit");        
+        currentScore += scorePerPerfectNote * currentMultiplier; 
+        NoteHit();
+        perfectHits++;
+    }
+
+
 
     public void NoteMissed()
     {

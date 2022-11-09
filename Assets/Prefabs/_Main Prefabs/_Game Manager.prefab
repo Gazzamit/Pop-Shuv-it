@@ -50,6 +50,14 @@ MonoBehaviour:
   theBS: {fileID: 0}
   currentScore: 0
   scorePerNote: 100
+  scorePerGoodNote: 125
+  scorePerPerfectNote: 150
+  totalArrows: 0
+  normalHits: 0
+  goodHits: 0
+  perfectHits: 0
+  missedHits: 0
+  ArrowsParent: {fileID: 0}
   scoreText: {fileID: 0}
   multiplierText: {fileID: 0}
   currentMultiplier: 0

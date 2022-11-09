@@ -1,30 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class downArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
 
+    //floats for calc of hit accuracy
+    public float earlyHitPos = 1.9f;
+    public float centreHitPos = -0.63f;
+    public float lateHitPos = -2.0f;
+    private float earlyHitRange, lateHitRange = 0f, hitPosZ, perPercent, goodPercent;
+
+    public GameObject normalEffect, goodEffect, perfectEffect, missEffect; 
+    public Vector3 effectsOffset; // Normal / Good / Perfect text
+
     private void OnCollisionEnter(Collision collision)
-    {
+    {   
         if (collision.gameObject.CompareTag("Arrow Trigger"))
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
             gameObject.tag = "Down Arrow";
 
         }
 
         if (collision.gameObject.CompareTag("Down Trigger"))
         {
+            if(dragging.touchSide == "left")
+            {
+                effectsOffset = new Vector3 (-4.62f,2.43f,-5.43f); // Left offset for perfect / good / normal text
+            }
+            else
+            {
+                effectsOffset = new Vector3 (4.62f,2.43f,-5.43f); // Left offset for perfect / good / normal text
+            }
+            earlyHitRange = earlyHitPos - centreHitPos;
+            lateHitRange = lateHitPos - centreHitPos;
+            perPercent = gameManager.perfectPercent;
+            goodPercent = gameManager.goodPercent;
+            hitPosZ = dragging.hitPositionZ;
 
-            gameManager.instance.NoteHit();
+            //Debug.Log("Early Perfect hit < " + (centreHitPos + (earlyHitRange * perPercent / 100)));
+            //Debug.Log("Late Perfect hit > " + (centreHitPos + (lateHitRange * perPercent / 100)));
+            //Debug.Log("Early Good hit < " + (centreHitPos + (earlyHitRange * goodPercent / 100)));
+            //Debug.Log("Late Good hit > " + (centreHitPos + (lateHitRange * goodPercent / 100)));
+
+            Debug.Log("HitPosX: " + hitPosZ);
+            
+            if (hitPosZ < (centreHitPos + (earlyHitRange * perPercent / 100)) &&
+                hitPosZ > (centreHitPos + (lateHitRange * perPercent / 100)))
+            {
+                gameManager.instance.PerfectHit();
+                Instantiate(perfectEffect, effectsOffset, Quaternion.identity);
+            }
+            else
+            if (hitPosZ < (centreHitPos + (earlyHitRange * goodPercent / 100)) &&
+                hitPosZ > (centreHitPos + (lateHitRange * goodPercent / 100)))
+            {
+                gameManager.instance.GoodHit();
+                Instantiate(goodEffect, effectsOffset, Quaternion.identity);
+            }
+            else
+            {
+                gameManager.instance.NormalHit();
+                Instantiate(normalEffect, effectsOffset, Quaternion.identity);
+            }
 
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);
 
             // grind anim here
-
             playerRb.transform.Rotate(0f, 90f, 0f);
             
         }

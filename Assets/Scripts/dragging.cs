@@ -9,10 +9,14 @@ public class dragging : MonoBehaviour
     private Vector3 offset;
     private Transform toDrag;
 
+    public static float hitPositionZ;
+
     beatScroller beatScrollerScript;
     public float beatTempo;
 
     public LayerMask arrows;
+
+    public static string touchSide;
     
     // Update is called once per frame
     void Update()
@@ -47,6 +51,13 @@ public class dragging : MonoBehaviour
 
                     arrowRigidbody.isKinematic = false;
 
+                    hitPositionZ = hit.collider.transform.position.z;
+                    //Debug.Log("Collider Position: " +  hit.collider.transform.position);
+                    if (hit.collider.transform.position.x < 0f)
+                    {
+                        touchSide = "Left"; //no need to test for right too
+                    }
+           
                     toDrag = hit.transform;
                     dist = hit.transform.position.z - Camera.main.transform.position.z;
                     v3 = new Vector3(pos.x, (beatTempo * Time.deltaTime) + pos.y, dist);
