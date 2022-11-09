@@ -23,6 +23,8 @@ public class MenuScene : MonoBehaviour
     public Text routeBuySetText;
     public Text tokenText;
 
+    private MenuCamera menuCam;
+
     //Shop cost items
     public int[] skinCost = new int[] { 0, 5, 5, 5, 5, 10, 10, 10, 10, 10};
     public int[] routeCost = new int[] { 0, 5, 5, 5, 5, 10, 10, 10, 10, 10};
@@ -47,10 +49,13 @@ public class MenuScene : MonoBehaviour
     private void Start()
     {
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        SaveManager.Instance.state.token = 100; 
+        //SaveManager.Instance.state.token = 100; 
+
+        //Find menu cam
+        menuCam = FindObjectOfType<MenuCamera>();
 
         //Position Came on teh Fouc Menu    
-        SetCameraTo(LevelManager.Instance.menuFocus);
+        SetFocusTo(LevelManager.Instance.menuFocus);
 
         //Update the gold text at the start
         UpdateTokenText();
@@ -203,18 +208,21 @@ public class MenuScene : MonoBehaviour
             default: //main menu
             case 0: //main menu
                 desiredMenuPosition = Vector3.zero;
+                menuCam.BackToMainMenu();
                 break;
-            case 1:
+            case 1: //level
                 desiredMenuPosition = Vector3.right * referenceHorizontalResolution;
+                menuCam.MoveToLevel();
                 break;
-            case 2:
+            case 2: //shop
                 desiredMenuPosition = Vector3.left * referenceHorizontalResolution;
+                menuCam.MoveToShop();
                 break;
         }
     }
-    private void SetCameraTo( int menuIndex)
+    private void SetFocusTo( int menuIndex)
     {
-        //Set the camera to the desired Menu Position (menuIndex set in Level Manager)
+        //Set the Focus to the desired Menu Position (menuIndex set in Level Manager)
         NavigateTo(menuIndex);
         //menuContainer.anchoredPosition3D = desiredMenuPosition;
     }
