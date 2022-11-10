@@ -57,8 +57,9 @@ public class MenuScene : MonoBehaviour
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
 
-        //Position Came on teh Fouc Menu    
-        SetFocusTo(LevelManager.Instance.menuFocus);
+        //Position Cam on the Focus Menu    
+        //SetFocusTo(LevelManager.Instance.menuFocus);
+        NavigateTo(LevelManager.Instance.menuFocus);
 
         //Update the gold text at the start
         UpdateTokenText();
@@ -216,23 +217,27 @@ public class MenuScene : MonoBehaviour
             case 0: //main menu
                 desiredMenuPosition = Vector3.zero;
                 menuCam.BackToMainMenu();
+                Debug.Log("NavigateTo: " + menuIndex);
                 break;
             case 1: //level
                 desiredMenuPosition = Vector3.right * referenceHorizontalResolution;
                 menuCam.MoveToLevel();
+                Debug.Log("NavigateTo: " + menuIndex);
+
                 break;
             case 2: //shop
                 desiredMenuPosition = Vector3.left * referenceHorizontalResolution;
                 menuCam.MoveToShop();
+                Debug.Log("NavigateTo: " + menuIndex);
                 break;
         }
     }
-    private void SetFocusTo( int menuIndex)
-    {
+    //private void SetFocusTo( int menuIndex)
+    //{
         //Set the Focus to the desired Menu Position (menuIndex set in Level Manager)
-        NavigateTo(menuIndex);
+    //    NavigateTo(menuIndex);
         //menuContainer.anchoredPosition3D = desiredMenuPosition;
-    }
+    //}
     //----------------------------Shop---------------------------
     private void SetSkin (int index)
     {
@@ -273,6 +278,7 @@ public class MenuScene : MonoBehaviour
     //-------------------------Menu Nav--------------------------
     public void OnBackClick()
     {
+    
         NavigateTo(0);
         Debug.Log("Back button clicked");
     }

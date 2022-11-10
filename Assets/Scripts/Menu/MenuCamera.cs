@@ -7,7 +7,7 @@ public class MenuCamera : MonoBehaviour
     //script to move the cam so that teh player can move between menu scenes
 
     private Vector3 startPosition;
-    private Vector3 desiredPosition;
+    private Vector3 desiredPosition = new Vector3(0f,0f,0f);
 
     private Quaternion startRotation;
     private Quaternion desiredRotation;
@@ -21,8 +21,13 @@ public class MenuCamera : MonoBehaviour
 
     private void Start()
     {
-        startPosition = desiredPosition = transform.localPosition;
-        startRotation = desiredRotation = transform.rotation;
+        Debug.Log("MenuCamera Start Called");
+        startPosition = transform.localPosition;
+        startRotation = transform.rotation;
+        if (desiredPosition.x == 0)
+        {
+            BackToMainMenu();
+        }
     }
 
     private void Update()
@@ -33,21 +38,21 @@ public class MenuCamera : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        Debug.Log("BackToMainMenu");
+        Debug.Log("MenuCamera.BackToMainMenu");
         desiredPosition = startPosition;
         desiredRotation = startRotation;
     }
 
     public void MoveToShop()
     {
-        Debug.Log("MoveToShop");
+        Debug.Log("MenuCamera.MoveToShop");
         desiredPosition = shopWayPoint.localPosition;
         desiredRotation = shopWayPoint.localRotation;
     }
 
     public void MoveToLevel()
     {
-        Debug.Log("MoveToLevel");
+        Debug.Log("MenuCamera.MoveToLevel");
         desiredPosition = levelWayPoint.localPosition;
         desiredRotation = levelWayPoint.localRotation;
     }

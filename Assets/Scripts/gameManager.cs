@@ -149,11 +149,12 @@ public class gameManager : MonoBehaviour
         //Focus the level selection after game play
         LevelManager.Instance.menuFocus = 1;
 
-        ExitSceneButton();
+        SceneManager.LoadScene("Menu");
     }
 
     public void ExitSceneButton()
     {   
+        LevelManager.Instance.menuFocus = 0;
         SceneManager.LoadScene("Menu");
     }
 }

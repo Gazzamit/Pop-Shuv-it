@@ -7,4 +7,6 @@ public class SaveState
 
     public int activeSkin = 0;
     public int activeRoute = 0;
+
+    public int menuIndexNumber;
 }
