@@ -25,7 +25,7 @@ public class upArrowTrigger : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Up Trigger"))
         {
-            if(dragging.touchSide == "left")
+            if(dragging.touchSide == "Left")
             {                
                 effectsOffset = new Vector3 (-4.62f,2.43f,-5.43f); // Left offset for perfect / good / normal text
             }

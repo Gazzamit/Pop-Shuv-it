@@ -55,7 +55,11 @@ public class dragging : MonoBehaviour
                     //Debug.Log("Collider Position: " +  hit.collider.transform.position);
                     if (hit.collider.transform.position.x < 0f)
                     {
-                        touchSide = "Left"; //no need to test for right too
+                        touchSide = "Left"; 
+                    }
+                    else
+                    {
+                        touchSide = "Right";
                     }
            
                     toDrag = hit.transform;

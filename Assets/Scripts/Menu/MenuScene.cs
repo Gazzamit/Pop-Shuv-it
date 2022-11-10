@@ -46,6 +46,9 @@ public class MenuScene : MonoBehaviour
     public float zoomDuration = .8f;
     private float zoomTransition = 0;
 
+    //grab player to zoom it in
+    public GameObject playerInMenu;
+
     private void Start()
     {
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -85,7 +88,7 @@ public class MenuScene : MonoBehaviour
         // Fade-in menu
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
 
-        // smooth menu lerp
+        // smooth menu lerp between menus
         menuContainer.anchoredPosition3D = Vector3.Lerp(menuContainer.anchoredPosition3D, desiredMenuPosition, .2f);
 
         // Entering level zoom
@@ -95,13 +98,17 @@ public class MenuScene : MonoBehaviour
             zoomTransition += (1 / zoomDuration) * Time.deltaTime;
 
             //change the menuContainer to scale using animationCurve
-            menuContainer.localScale = Vector3.Lerp(Vector3.one,  new Vector3(5f,5f,5f), enteringLevelZoomCurve.Evaluate(zoomTransition));
+            menuContainer.localScale = Vector3.Lerp(Vector3.one, new Vector3(5f,5f,5f), enteringLevelZoomCurve.Evaluate(zoomTransition));
+            //playerInMenu.transform.localScale -= new Vector3(.1f, .1f, .1f); // enteringLevelZoomCurve.Evaluate(zoomTransition
+            
 
             //change the desired position of canvas to zoom in centre of level as it zooms
             Vector3 newDesiredPosition = desiredMenuPosition * 5;
             RectTransform rt = levelPanel.GetChild(LevelManager.Instance.currentLevel).GetComponent<RectTransform>();
             newDesiredPosition -= rt.anchoredPosition3D * 5;
 
+            playerInMenu.transform.localScale = Vector3.Lerp(playerInMenu.transform.localScale, new Vector3(.1f,.1f,.1f), enteringLevelZoomCurve.Evaluate(zoomTransition));
+            
             //protect zoom going off left of screen
             if (newDesiredPosition.x > referenceHorizontalResolution * 7f) newDesiredPosition.x = referenceHorizontalResolution * 7f;
 
