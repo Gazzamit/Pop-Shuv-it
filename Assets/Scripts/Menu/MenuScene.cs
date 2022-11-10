@@ -11,6 +11,7 @@ public class MenuScene : MonoBehaviour
     public CanvasGroup fadeGroup; //assign in inspector
 
     private float fadeInSpeed = 1f; //think 1/fadeInSpeed to get time
+    public float menuLerp = 0.05f;
 
     public RectTransform menuContainer;
 
@@ -90,7 +91,7 @@ public class MenuScene : MonoBehaviour
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
 
         // smooth menu lerp between menus
-        menuContainer.anchoredPosition3D = Vector3.Lerp(menuContainer.anchoredPosition3D, desiredMenuPosition, .2f);
+        menuContainer.anchoredPosition3D = Vector3.Lerp(menuContainer.anchoredPosition3D, desiredMenuPosition, menuLerp);
 
         // Entering level zoom
         if (isEnteringLevel)
