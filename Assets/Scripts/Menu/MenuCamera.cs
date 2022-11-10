@@ -33,18 +33,21 @@ public class MenuCamera : MonoBehaviour
 
     public void BackToMainMenu()
     {
+        Debug.Log("BackToMainMenu");
         desiredPosition = startPosition;
         desiredRotation = startRotation;
     }
 
     public void MoveToShop()
     {
+        Debug.Log("MoveToShop");
         desiredPosition = shopWayPoint.localPosition;
         desiredRotation = shopWayPoint.localRotation;
     }
 
     public void MoveToLevel()
     {
+        Debug.Log("MoveToLevel");
         desiredPosition = levelWayPoint.localPosition;
         desiredRotation = levelWayPoint.localRotation;
     }
