@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeGroup: {fileID: 1098672857}
+  menuLerp: 0.05
   menuContainer: {fileID: 1021004932}
   skinPanel: {fileID: 1584292752}
   routePanel: {fileID: 1641802889}
@@ -737,7 +738,7 @@ MonoBehaviour:
   skinCost: 00000000050000000500000005000000050000000a0000000a0000000a0000000a0000000a000000
   routeCost: 00000000050000000500000005000000050000000a0000000a0000000a0000000a0000000a000000
   referenceHorizontalResolution: 2532
-  SceneToLoad: SampleScene
+  SceneToLoad: SampleScene GM
   enteringLevelZoomCurve:
     serializedVersion: 2
     m_Curve:
