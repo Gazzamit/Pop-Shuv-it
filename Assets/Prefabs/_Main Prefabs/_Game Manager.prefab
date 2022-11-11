@@ -57,7 +57,14 @@ MonoBehaviour:
   goodHits: 0
   perfectHits: 0
   missedHits: 0
+  percentHitText: {fileID: 0}
+  normalsText: {fileID: 0}
+  goodsText: {fileID: 0}
+  perfectsText: {fileID: 0}
+  missesText: {fileID: 0}
+  finalScoreText: {fileID: 0}
   ArrowsParent: {fileID: 0}
+  resultsScreen: {fileID: 0}
   scoreText: {fileID: 0}
   multiplierText: {fileID: 0}
   currentMultiplier: 0

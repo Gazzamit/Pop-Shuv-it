@@ -18,7 +18,10 @@ public class gameManager : MonoBehaviour
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
     public float totalArrows, normalHits, goodHits, perfectHits, missedHits;
+    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
+
     public GameObject ArrowsParent;
+    public GameObject resultsScreen;
 
     public static float perfectPercent = 20f; //hit accuracy
     public static float goodPercent = 50f; //hit accuracy
@@ -73,6 +76,35 @@ public class gameManager : MonoBehaviour
                 music.Play();
             }
         }
+        else
+        {
+            //Call results screen - DELETE EXIT AFTER 20S IN IF STATEMENT
+            if((!music.isPlaying && !resultsScreen.activeInHierarchy) || Time.timeSinceLevelLoad >= 20f)
+            {
+                Debug.Log("Result Screen called");
+                resultsScreen.SetActive(true);
+                normalsText.text = normalHits.ToString();
+                goodsText.text = goodHits.ToString();
+                perfectsText.text = perfectHits.ToString();
+                missesText.text = missedHits.ToString();
+
+                float percentHit = ((normalHits + goodHits + perfectHits) / totalArrows) * 100f;
+
+                percentHitText.text = percentHit.ToString("F1") + "%";         
+
+                finalScoreText.text = currentScore.ToString();
+
+                startPlaying = false;
+                theBS.hasStarted = false;
+
+                music.Stop();    
+            }
+        }
+        if (resultsScreen.activeInHierarchy && Input.anyKeyDown) // can reload scene
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
     }
 
 
