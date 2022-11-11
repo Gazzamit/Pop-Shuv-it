@@ -18,7 +18,7 @@ public class gameManager : MonoBehaviour
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
     public float totalArrows, normalHits, goodHits, perfectHits, missedHits;
-    public Text percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
+    public TextMeshProUGUI percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
 
     public GameObject ArrowsParent;
     public GameObject resultsScreen;
