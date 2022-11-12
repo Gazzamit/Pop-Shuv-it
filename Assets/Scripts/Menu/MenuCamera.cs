@@ -24,7 +24,7 @@ public class MenuCamera : MonoBehaviour
         Debug.Log("MenuCamera Start Called");
         startPosition = transform.localPosition;
         startRotation = transform.rotation;
-        if (desiredPosition.x == 0) // on scene load, set camera to maimMenu position
+        if (desiredPosition.x == 0)
         {
             BackToMainMenu();
         }
