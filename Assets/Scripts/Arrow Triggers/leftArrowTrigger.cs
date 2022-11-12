@@ -47,7 +47,7 @@ public class leftArrowTrigger : MonoBehaviour
             //Debug.Log("Early Good hit < " + (centreHitPos + (earlyHitRange * goodPercent / 100)));
             //Debug.Log("Late Good hit > " + (centreHitPos + (lateHitRange * goodPercent / 100)));
 
-            Debug.Log("HitPosX: " + hitPosZ);
+            //Debug.Log("HitPosZ: " + hitPosZ);
             
             if (hitPosZ < (centreHitPos + (earlyHitRange * perPercent / 100)) &&
                 hitPosZ > (centreHitPos + (lateHitRange * perPercent / 100)))
