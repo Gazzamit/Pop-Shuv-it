@@ -658,10 +658,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeGroup: {fileID: 909084790}
-  minLogoTime: 0.5
+  minLogoTime: 1
   gameLoadTime: 0
-  fadeInTime: 0.5
-  fadeOutTime: 0.5
+  fadeInTime: 1
+  fadeOutTime: 1
 --- !u!1 &1286892000
 GameObject:
   m_ObjectHideFlags: 0
