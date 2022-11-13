@@ -51,7 +51,6 @@ public class MenuScene : MonoBehaviour
     //grab player to zoom it in
     public GameObject playerInMenu;
     public GameObject playerBodyInMenu;
-    private Material[] playerMaterials;
     private Material[] signMaterials;
 
 
@@ -64,8 +63,8 @@ public class MenuScene : MonoBehaviour
         menuCam = FindObjectOfType<MenuCamera>();
 
         //Position Cam on the Focus Menu    
-        //SetFocusTo(LevelManager.Instance.menuFocus);
-        NavigateTo(LevelManager.Instance.menuFocus);
+        //SetFocusTo(Manager.Instance.menuFocus);
+        NavigateTo(Manager.Instance.menuFocus);
 
         //Update the gold text at the start
         UpdateTokenText();
@@ -109,7 +108,7 @@ public class MenuScene : MonoBehaviour
 
             //change the desired position of canvas to zoom in centre of level as it zooms
             Vector3 newDesiredPosition = desiredMenuPosition * 5;
-            RectTransform rt = levelPanel.GetChild(LevelManager.Instance.currentLevel).GetComponent<RectTransform>();
+            RectTransform rt = levelPanel.GetChild(Manager.Instance.currentLevel).GetComponent<RectTransform>();
             newDesiredPosition -= rt.anchoredPosition3D * 5;
 
             playerInMenu.transform.localScale = Vector3.Lerp(playerInMenu.transform.localScale, new Vector3(.1f,.1f,.1f), enteringLevelZoomCurve.Evaluate(zoomTransition));
@@ -147,7 +146,13 @@ public class MenuScene : MonoBehaviour
 
             // set colour of image is owned or not using tert operator
             Image img = t.GetComponent<Image>();
-            img.color = SaveManager.Instance.IsSkinOwned(i) ? Color.white : new Color(0.7f,0.7f,0.7f);
+            
+            img.color = Manager.Instance.playerTshirtColorOptions[currentIndex]; //player color from manager
+            
+            //DNot using dimming - looked weird as selected colours changed when bought
+            //img.color = SaveManager.Instance.IsSkinOwned(i) 
+            //    ? Manager.Instance.playerTshirtColorOptions[currentIndex] //player color from manager
+            //    : Color.Lerp(Manager.Instance.playerTshirtColorOptions[currentIndex], new Color(0,0,0,1),0.25f); // dim the colour
 
             i++;
         }
@@ -189,10 +194,10 @@ public class MenuScene : MonoBehaviour
            signMaterials = t.GetChild(0).GetChild(1).GetComponent<MeshRenderer>().materials;
         
             //Debug Materials
-            foreach (Material material in signMaterials) 
-            {
-                Debug.Log("Index: " + i + "Material: " + material);
-            }
+            //foreach (Material material in signMaterials) 
+            //{
+            //    Debug.Log("Index: " + i + "Material: " + material);
+            //}
 
             //Is it unlocked?
             if( i <= SaveManager.Instance.state.completedLevel)
@@ -264,7 +269,7 @@ public class MenuScene : MonoBehaviour
         SaveManager.Instance.state.activeSkin = index;  //Set prefs
 
         // TODO change skin on the model
-        playerMaterials = playerBodyInMenu.GetComponent<SkinnedMeshRenderer>().materials;
+        Manager.Instance.playerMaterials = playerBodyInMenu.GetComponent<SkinnedMeshRenderer>().materials;
         
         //Debug Materials
         //foreach (Material material in playerMaterials) 
@@ -272,8 +277,8 @@ public class MenuScene : MonoBehaviour
         //    Debug.Log(material);
         //}
 
-        //random set color test
-        //playerMaterials[2].color = Color.red;
+        //Set color of player T Shirt (3rd material)
+        Manager.Instance.playerMaterials[2].color = Manager.Instance.playerTshirtColorOptions[index];
 
         // change buy/set button
         skinBuySetText.text = "Current";
@@ -335,9 +340,13 @@ public class MenuScene : MonoBehaviour
         {   
             //make icon bigger
             skinPanel.GetChild(currentIndex).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
+            //skinPanel.GetChild(currentIndex).GetComponent<Image>().color = Manager.Instance.playerTshirtColorOptions[currentIndex];
 
             //make last selected icon normal size
             skinPanel.GetChild(selectedSkinIndex).GetComponent<RectTransform>().localScale = Vector3.one;
+            //skinPanel.GetChild(selectedSkinIndex).GetComponent<Image>().color 
+            //    = Color.Lerp(skinPanel.GetChild(currentIndex).GetComponent<Image>().color, new Color(0,0,0,1),0.25f); // dim the colour
+;
         }
 
         //set the selected skin
@@ -426,7 +435,7 @@ public class MenuScene : MonoBehaviour
                 SetSkin(selectedSkinIndex);
 
                 //change the colour of the button if bought in realtime
-                skinPanel.GetChild(selectedSkinIndex).GetComponent<Image>().color = Color.white;
+                skinPanel.GetChild(selectedSkinIndex).GetComponent<Image>().color = Manager.Instance.playerTshirtColorOptions[selectedSkinIndex];
 
                 //Update token text with new value
                 UpdateTokenText();
@@ -476,7 +485,7 @@ public class MenuScene : MonoBehaviour
     //----------------------------------Level Selection----------------------
     private void OnLevelSelect(int currentIndex)
     {
-        LevelManager.Instance.currentLevel = currentIndex;
+        Manager.Instance.currentLevel = currentIndex;
         isEnteringLevel = true;
         Debug.Log("Selecting Level Button: " + currentIndex);
         //SceneManager.LoadScene(currentIndex);

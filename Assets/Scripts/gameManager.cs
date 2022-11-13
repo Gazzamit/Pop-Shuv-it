@@ -176,11 +176,11 @@ public class gameManager : MonoBehaviour
     //For testing completion of level
     public void CompleteLevelButton()
     {
-        Debug.Log("Completed level and saved progress: " + LevelManager.Instance.currentLevel);
-        SaveManager.Instance.CompleteLevel(LevelManager.Instance.currentLevel);
+        Debug.Log("Completed level and saved progress: " + Manager.Instance.currentLevel);
+        SaveManager.Instance.CompleteLevel(Manager.Instance.currentLevel);
 
         //Focus the level selection after game play
-        LevelManager.Instance.menuFocus = 1;
+        Manager.Instance.menuFocus = 1;
 
         SceneManager.LoadScene("Menu");
     }
@@ -188,7 +188,7 @@ public class gameManager : MonoBehaviour
     //For exiting the scene
     public void ExitSceneButton()
     {   
-        LevelManager.Instance.menuFocus = 0;
+        Manager.Instance.menuFocus = 0;
         SceneManager.LoadScene("Menu");
     }
 }
