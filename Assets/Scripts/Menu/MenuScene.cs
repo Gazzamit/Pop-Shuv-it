@@ -49,6 +49,8 @@ public class MenuScene : MonoBehaviour
 
     //grab player to zoom it in
     public GameObject playerInMenu;
+    public GameObject playerBodyInMenu;
+    private Material[] playerMaterials;
 
     private void Start()
     {
@@ -101,8 +103,6 @@ public class MenuScene : MonoBehaviour
 
             //change the menuContainer to scale using animationCurve
             menuContainer.localScale = Vector3.Lerp(Vector3.one, new Vector3(5f,5f,5f), enteringLevelZoomCurve.Evaluate(zoomTransition));
-            //playerInMenu.transform.localScale -= new Vector3(.1f, .1f, .1f); // enteringLevelZoomCurve.Evaluate(zoomTransition
-            
 
             //change the desired position of canvas to zoom in centre of level as it zooms
             Vector3 newDesiredPosition = desiredMenuPosition * 5;
@@ -247,6 +247,16 @@ public class MenuScene : MonoBehaviour
         SaveManager.Instance.state.activeSkin = index;  //Set prefs
 
         // TODO change skin on the model
+        playerMaterials = playerBodyInMenu.GetComponent<SkinnedMeshRenderer>().materials;
+        
+        //Debug Materials
+        //foreach (Material material in playerMaterials) 
+        //{
+        //    Debug.Log(material);
+        //}
+
+        //random set color test
+        //playerMaterials[2].color = Color.red;
 
         // change buy/set button
         skinBuySetText.text = "Current";

@@ -16,15 +16,16 @@ public class MenuCamera : MonoBehaviour
     public Transform levelWayPoint;
 
     private Vector3 axis = Vector3.up;
-    public float rate;
     public AnimationCurve curve;
+
+    public float CameraLerp;
 
     private void Start()
     {
         Debug.Log("MenuCamera Start Called");
         startPosition = transform.localPosition;
         startRotation = transform.rotation;
-        if (desiredPosition.x == 0) // on scene load, set camera to maimMenu position
+        if (desiredPosition.x == 0) // on scene load, set camera to mainMenu position
         {
             BackToMainMenu();
         }
@@ -32,8 +33,8 @@ public class MenuCamera : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, 0.1f);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, desiredRotation, 0.1f);
+        transform.localPosition = Vector3.Lerp(transform.localPosition, desiredPosition, CameraLerp);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, desiredRotation, CameraLerp);
     }
 
     public void BackToMainMenu()
