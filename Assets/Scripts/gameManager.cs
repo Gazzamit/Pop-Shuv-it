@@ -173,6 +173,7 @@ public class gameManager : MonoBehaviour
         scoreText.text = "Score: " + currentScore;
     }
 
+    //For testing completion of level
     public void CompleteLevelButton()
     {
         Debug.Log("Completed level and saved progress: " + LevelManager.Instance.currentLevel);
@@ -184,6 +185,7 @@ public class gameManager : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    //For exiting the scene
     public void ExitSceneButton()
     {   
         LevelManager.Instance.menuFocus = 0;

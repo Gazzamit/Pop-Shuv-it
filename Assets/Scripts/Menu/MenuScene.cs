@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class MenuScene : MonoBehaviour
 {
@@ -20,9 +21,9 @@ public class MenuScene : MonoBehaviour
     public Transform levelPanel; //assign in inspector - Part of Level Panel (L)
 
     //Text for shop
-    public Text skinBuySetText;
-    public Text routeBuySetText;
-    public Text tokenText;
+    public TextMeshProUGUI skinBuySetText;
+    public TextMeshProUGUI routeBuySetText; 
+    public TextMeshProUGUI tokenText;
 
     private MenuCamera menuCam;
 
@@ -51,11 +52,13 @@ public class MenuScene : MonoBehaviour
     public GameObject playerInMenu;
     public GameObject playerBodyInMenu;
     private Material[] playerMaterials;
+    private Material[] signMaterials;
+
 
     private void Start()
     {
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        //SaveManager.Instance.state.token = 100; 
+        SaveManager.Instance.state.token = 100; 
 
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
@@ -133,6 +136,7 @@ public class MenuScene : MonoBehaviour
     //-------------------------------Init-----------------------------
     private void InitShop()
     {
+        Debug.Log("InitLevel Running");
         //add click events e.g. 0 to 10 to skin items
         int i = 0;
         foreach (Transform t in skinPanel)
@@ -169,6 +173,7 @@ public class MenuScene : MonoBehaviour
     private void InitLevel()
     {
          //add click events e.g. 0 to 5 to levels
+        Debug.Log("InitLevel Running");
         int i = 0;
         foreach (Transform t in levelPanel)
         {
@@ -176,9 +181,18 @@ public class MenuScene : MonoBehaviour
             Button b = t.GetComponent<Button>();
             b.onClick.AddListener(()=>OnLevelSelect(currentIndex));
 
-            Image img = t.GetComponent<Image>();
+            //Image img = t.GetComponent<Image>(); // no longer using as was for sprite
 
-            //Debug.Log("Index: " + i + " SaveManager.Instance.state.completedLevel: " + SaveManager.Instance.state.completedLevel);
+            Debug.Log("Level Button Found Index: " + i);
+           
+           //get the materials of the 2nd gameobjectobject of child of sign
+           signMaterials = t.GetChild(0).GetChild(1).GetComponent<MeshRenderer>().materials;
+        
+            //Debug Materials
+            foreach (Material material in signMaterials) 
+            {
+                Debug.Log("Index: " + i + "Material: " + material);
+            }
 
             //Is it unlocked?
             if( i <= SaveManager.Instance.state.completedLevel)
@@ -187,19 +201,22 @@ public class MenuScene : MonoBehaviour
                 if ( i == SaveManager.Instance.state.completedLevel)
                 {
                     //Debug.Log("//Its not completed");
-                    img.color = Color.white;
+                    //img.color = Color.white; // no longer using as was for sprite
+                    signMaterials[0].color = Color.white;
                 }
                 else
                 {
                     //Debug.Log("//Level is already completed");
-                    img.color = Color.green;    
+                    //img.color = Color.green; // no longer using as was for sprite
+                    signMaterials[0].color = new Color(0,1,0,0.5f); //green  
                 }
             }
             else
             {
                 //Debug.Log("// level is locked, disable button and grey");
                 b.interactable = false;
-                img.color = Color.grey;
+                //img.color = Color.grey; // no longer using as was for sprite
+                signMaterials[0].color = new Color(0.3f,0.3f,0.3f,1); //Grey
             }
 
 
@@ -463,9 +480,9 @@ public class MenuScene : MonoBehaviour
         isEnteringLevel = true;
         Debug.Log("Selecting Level Button: " + currentIndex);
         //SceneManager.LoadScene(currentIndex);
-
-        //TEMP
-        //SceneManager.LoadScene("Twin Controls");
     }
+
+    
+
 
 }
