@@ -5,6 +5,7 @@ using UnityEngine;
 public class upArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
+    public animStateController animStateControl;
 
     //floats for calc of hit accuracy
     public float earlyHitPos = 1.9f;
@@ -66,8 +67,11 @@ public class upArrowTrigger : MonoBehaviour
                 Instantiate(normalEffect, effectsOffset, Quaternion.identity);
             }
 
-            // jump anim here
-            playerRb.transform.Translate(0f, 5f, 0f);
+            // ollie anim here
+            //playerRb.transform.Translate(0f, 5f, 0f);
+
+            animStateControl.ollieAnim = true;
+
 
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);

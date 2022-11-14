@@ -10,6 +10,8 @@ public class gameManager : MonoBehaviour
     public AudioSource music; 
     public bool startPlaying;
     public beatScroller theBS;
+    public animStateController animStateControl;
+
 
     public static gameManager instance;
 
@@ -52,6 +54,8 @@ public class gameManager : MonoBehaviour
 
         // set fade to 1
         fadeGroup.alpha = 1;
+
+
     }
 
     // Update is called once per frame
@@ -72,7 +76,7 @@ public class gameManager : MonoBehaviour
             {
                 startPlaying = true;
                 theBS.hasStarted = true;
-
+                animStateControl.startPlayAnim = true;
                 music.Play();
             }
         }
