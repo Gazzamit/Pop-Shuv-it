@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class Preloader : MonoBehaviour
 {
     public CanvasGroup fadeGroup; //assign in inspector
-    public float minLogoTime = 3.0f; // min time for preload scence dispolay of logo
+    public float minLogoTime = 3.0f; // min time for preload scene dispolay of logo
     public float gameLoadTime;
-    public float fadeInTime = 1f;
+    public float fadeInTime = 2f;
     public float fadeOutTime = 2f;
 
     private void Start() 
@@ -19,7 +19,7 @@ public class Preloader : MonoBehaviour
         //preload the game here
 
         //display logo while preload
-        if (Time.time < minLogoTime) //if preload is fast, allow 3s to see logo and assign loadtime
+        if (Time.time < minLogoTime) //if preload is fast, allow 2s to see logo and assign loadtime
         {
             //Debug.Log("Fast");
             gameLoadTime = minLogoTime; 
@@ -37,7 +37,7 @@ public class Preloader : MonoBehaviour
         // Fade-in phase
         if (Time.time < minLogoTime)
         {
-            fadeGroup.alpha = fadeInTime - Time.time; //1s fade in
+            fadeGroup.alpha = fadeInTime - Time.time; //2s fade in
         }
 
         //Fade-out phase
