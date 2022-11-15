@@ -22,6 +22,7 @@ public class gameManager : MonoBehaviour
 
     public GameObject ArrowsParent;
     public GameObject resultsScreen;
+    public GameObject pauseScreen;
 
     public static float perfectPercent = 20f; //hit accuracy
     public static float goodPercent = 50f; //hit accuracy
@@ -79,7 +80,7 @@ public class gameManager : MonoBehaviour
         else
         {
             //Call results screen - DELETE EXIT AFTER 20S IN IF STATEMENT
-            if((!music.isPlaying && !resultsScreen.activeInHierarchy) || Time.timeSinceLevelLoad >= 20f)
+            if((!music.isPlaying && !resultsScreen.activeInHierarchy && !pauseScreen.activeInHierarchy) || Time.timeSinceLevelLoad >= 20f)
             {
                 Debug.Log("Result Screen called");
                 resultsScreen.SetActive(true);
@@ -190,5 +191,19 @@ public class gameManager : MonoBehaviour
     {   
         Manager.Instance.menuFocus = 0;
         SceneManager.LoadScene("Menu");
+    }
+
+    public void PauseOptionsButton()
+    {
+        pauseScreen.SetActive(true);
+        AudioListener.pause = true;
+        Time.timeScale = 0;
+    }
+
+    public void RestartButton()
+    {
+        pauseScreen.SetActive(false);
+        AudioListener.pause = false;
+        Time.timeScale = 1;
     }
 }

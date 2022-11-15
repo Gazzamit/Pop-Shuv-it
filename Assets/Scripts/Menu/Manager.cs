@@ -17,5 +17,4 @@ public class Manager : MonoBehaviour
         Instance = this;
     }
 
-
 }
