@@ -25,6 +25,7 @@ public class gameManager : MonoBehaviour
     public GameObject ArrowsParent;
     public GameObject resultsScreen;
     public GameObject pauseScreen;
+    public GameObject highScores;
 
     public static float perfectPercent = 20f; //hit accuracy
     public static float goodPercent = 50f; //hit accuracy
@@ -217,4 +218,20 @@ public class gameManager : MonoBehaviour
         AudioListener.pause = false;
         Time.timeScale = 1;
     }
+    
+    public void HighScoresButtonInGame()
+    {
+        Debug.Log("High Scores Screen");
+        highScores.SetActive(true);
+        //AudioListener.pause = true;
+        //Time.timeScale = 0;
+    }
+    public void HighScoresBackButtonInGame()
+    {
+        Debug.Log("High Scores Back Button");
+        highScores.SetActive(false);
+        //AudioListener.pause = true;
+        //Time.timeScale = 0;
+    }
+
 }

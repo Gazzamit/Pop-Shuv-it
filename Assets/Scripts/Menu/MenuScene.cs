@@ -57,7 +57,7 @@ public class MenuScene : MonoBehaviour
     private void Start()
     {
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        SaveManager.Instance.state.token = 100; 
+        //SaveManager.Instance.state.token = 100; 
 
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
@@ -127,7 +127,10 @@ public class MenuScene : MonoBehaviour
             if (zoomTransition >= 1)
             {
                 //enter level
-                SceneManager.LoadScene(SceneToLoad);
+                //SceneManager.LoadScene(SceneToLoad); //scene selected in Inspector
+                int currentIndex = Manager.Instance.currentLevel;
+                Debug.Log("Loading Scene: " + currentIndex);
+                SceneManager.LoadScene(currentIndex);
             }
         }
     }
@@ -488,7 +491,6 @@ public class MenuScene : MonoBehaviour
         Manager.Instance.currentLevel = currentIndex;
         isEnteringLevel = true;
         Debug.Log("Selecting Level Button: " + currentIndex);
-        //SceneManager.LoadScene(currentIndex);
     }
 
     

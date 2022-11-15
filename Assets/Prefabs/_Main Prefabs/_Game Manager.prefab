@@ -66,6 +66,7 @@ MonoBehaviour:
   ArrowsParent: {fileID: 0}
   resultsScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
+  highScores: {fileID: 0}
   scoreText: {fileID: 0}
   multiplierText: {fileID: 0}
   currentMultiplier: 0
