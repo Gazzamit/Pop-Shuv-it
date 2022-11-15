@@ -181,31 +181,38 @@ public class gameManager : MonoBehaviour
     //For testing completion of level
     public void CompleteLevelButton()
     {
-        Debug.Log("Completed level and saved progress: " + Manager.Instance.currentLevel);
-        SaveManager.Instance.CompleteLevel(Manager.Instance.currentLevel);
+        Debug.Log("Completed level and saved progress: " + Manager.Instance.currentLevel); //Works from Preloader only (to access Manager)
+        SaveManager.Instance.CompleteLevel(Manager.Instance.currentLevel); //Works from Preloader only (to access Manager)
 
         //Focus the level selection after game play
-        Manager.Instance.menuFocus = 1;
+        Manager.Instance.menuFocus = 1;//Works from Preloader only (to access Manager)
 
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Menu");//Works from Preloader only
     }
 
     //For exiting the scene
     public void ExitSceneButton()
     {   
-        Manager.Instance.menuFocus = 0;
-        SceneManager.LoadScene("Menu");
+        Debug.Log("Exit Scene");
+        pauseScreen.SetActive(false);
+        AudioListener.pause = false;
+        Time.timeScale = 1;
+        Manager.Instance.menuFocus = 0; //Works from Preloader only (to access Manager)
+        SceneManager.LoadScene("Menu");//Works from Preloader only 
+
     }
 
     public void PauseOptionsButton()
     {
+        Debug.Log("Pause Screen");
         pauseScreen.SetActive(true);
         AudioListener.pause = true;
         Time.timeScale = 0;
     }
 
     public void RestartButton()
-    {
+    {   
+        Debug.Log("Restart");
         pauseScreen.SetActive(false);
         AudioListener.pause = false;
         Time.timeScale = 1;

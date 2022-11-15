@@ -47,6 +47,7 @@ MonoBehaviour:
   music: {fileID: 0}
   startPlaying: 0
   theBS: {fileID: 0}
+  animStateControl: {fileID: 0}
   currentScore: 0
   scorePerNote: 100
   scorePerGoodNote: 125

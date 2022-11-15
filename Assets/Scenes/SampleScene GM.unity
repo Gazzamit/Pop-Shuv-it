@@ -254,6 +254,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1344275967, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
   m_PrefabInstance: {fileID: 955023085914838677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1387062144 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2128832151, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
+  m_PrefabInstance: {fileID: 6818404867980903758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b920ea2993344cdb96e9b23597c8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1837146762
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +590,10 @@ PrefabInstance:
       propertyPath: percentHitText
       value: 
       objectReference: {fileID: 955023085914838683}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 1301433851685156098, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: m_Name
       value: _Game Manager
@@ -703,6 +718,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8282544367516730586, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 424144295290197425}
     - target: {fileID: 8352703882937280461, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
       propertyPath: m_Name
       value: _UI
