@@ -6,7 +6,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class leftArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
-    
+    public animStateController animStateControl;
+
     //floats for calc of hit accuracy
     public float earlyHitPos = 1.9f;
     public float centreHitPos = -0.63f;
@@ -23,6 +24,7 @@ public class leftArrowTrigger : MonoBehaviour
             //Debug.Log(collision.gameObject.name);
             gameObject.tag = "Left Arrow";
 
+            
         }
 
         if (collision.gameObject.CompareTag("Left Trigger"))
@@ -69,7 +71,13 @@ public class leftArrowTrigger : MonoBehaviour
             }
             
             // move right anim here
-            playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
+            //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
+
+            //Kickflip animation trigger
+
+            animStateControl.kickflipAnim = true;
+
+
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);
             
