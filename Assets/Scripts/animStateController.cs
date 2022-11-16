@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim;
     Animator animator;
 
 
@@ -24,7 +24,7 @@ public class animStateController : MonoBehaviour
         startPlayingAnimation();
         kickflip();
         ollie();
-
+        indy();
 
     }
 
@@ -97,7 +97,29 @@ public class animStateController : MonoBehaviour
 
     }
 
+    public void indy()
+    {
+        if (indyAnim == true)
+        {
+            animator.SetBool("Indy?", true);
 
+        }
+
+        if (indyAnim == !true)
+        {
+            animator.SetBool("Indy?", false);
+
+        }
+
+
+
+    }
+
+    public void indyEnd()
+    {
+        indyAnim = false;
+
+    }
 
 
 }

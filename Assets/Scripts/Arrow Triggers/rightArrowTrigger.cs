@@ -5,7 +5,9 @@ using UnityEngine;
 public class rightArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
-    
+    public animStateController animStateControl;
+
+
     //floats for calc of hit accuracy
     public float earlyHitPos = 1.9f;
     public float centreHitPos = -0.63f;
@@ -70,8 +72,13 @@ public class rightArrowTrigger : MonoBehaviour
                 gameManager.instance.NormalHit();
                 Instantiate(normalEffect, effectsOffset, Quaternion.identity);
             }
-            
-            playerRb.transform.Translate(3.0f, 0f, 0f);
+
+
+
+
+            //playerRb.transform.Translate(3.0f, 0f, 0f);
+            //Indy animation here
+            animStateControl.indyAnim = true;
 
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);
