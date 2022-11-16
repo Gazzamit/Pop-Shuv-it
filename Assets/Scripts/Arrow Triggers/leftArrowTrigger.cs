@@ -94,7 +94,8 @@ public class leftArrowTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             //Have a missed arrow and end combo trigger here
-            playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
+            //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
+            animStateControl.wobbleAnim = true;
             gameManager.instance.NoteMissed();
             gameObject.SetActive(false);
            

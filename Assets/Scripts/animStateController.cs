@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, anim5050;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, anim5050, wobbleAnim;
     Animator animator;
 
 
@@ -26,7 +26,7 @@ public class animStateController : MonoBehaviour
         ollie();
         indy();
         grind5050();
-
+        wobble();
 
     }
 
@@ -145,6 +145,30 @@ public class animStateController : MonoBehaviour
     public void anim5050End()
     {
         anim5050 = false;
+
+    }
+
+
+    public void wobble()
+    {
+        if (wobbleAnim == true)
+        {
+            animator.SetBool("Wobble?", true);
+
+        }
+
+        if (wobbleAnim == !true)
+        {
+            animator.SetBool("Wobble?", false);
+
+        }
+
+
+    }
+
+    public void wobbleEnd()
+    {
+        wobbleAnim = false;
 
     }
 
