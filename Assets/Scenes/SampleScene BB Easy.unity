@@ -1942,10 +1942,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 7230745064718422893, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7336550085291291663, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1953,10 +1949,6 @@ PrefabInstance:
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
       value: _Moving Level Objects
-      objectReference: {fileID: 0}
-    - target: {fileID: 7705351832523032853, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7891303449005519120, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
