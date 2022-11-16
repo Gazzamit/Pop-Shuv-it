@@ -1946,6 +1946,10 @@ PrefabInstance:
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 1166583960}
+    - target: {fileID: 7336550085291291663, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
       value: _Moving Level Objects

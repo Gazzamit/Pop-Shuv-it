@@ -6,6 +6,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class downArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
+    public animStateController animStateControl;
 
     //floats for calc of hit accuracy
     public float earlyHitPos = 1.9f;
@@ -71,8 +72,9 @@ public class downArrowTrigger : MonoBehaviour
             gameObject.SetActive(false);
 
             // grind anim here
-            playerRb.transform.Rotate(0f, 90f, 0f);
-            
+            animStateControl.anim5050 = true;
+            //playerRb.transform.Rotate(0f, 90f, 0f);
+
         }
 
         if (collision.gameObject.CompareTag("Left Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Right Trigger"))
