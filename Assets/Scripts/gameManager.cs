@@ -20,12 +20,16 @@ public class gameManager : MonoBehaviour
     public int scorePerGoodNote = 125;
     public int scorePerPerfectNote = 150;
     public float totalArrows, normalHits, goodHits, perfectHits, missedHits;
+    public int[] getHighScores = new int[5];
+    public string[] getHighScoreNames = new string[5];
+    public RectTransform highScoreLocation;
+
     public TextMeshProUGUI percentHitText, normalsText, goodsText, perfectsText, missesText, finalScoreText;
 
     public GameObject ArrowsParent;
     public GameObject resultsScreen;
     public GameObject pauseScreen;
-    public GameObject highScores;
+    public GameObject highScoresScreen;
 
     public static float perfectPercent = 20f; //hit accuracy
     public static float goodPercent = 50f; //hit accuracy
@@ -36,6 +40,7 @@ public class gameManager : MonoBehaviour
     public int currentMultiplier;
     public int multiplierTracker;
     public int[] multiplierThreshold; 
+
 
     public CanvasGroup fadeGroup; //for fade-in using fade alpha
     public float fadeInDuration = 1f; // fade-in time
@@ -221,15 +226,49 @@ public class gameManager : MonoBehaviour
     
     public void HighScoresButtonInGame()
     {
+        //selected in pause screen
         Debug.Log("High Scores Screen");
-        highScores.SetActive(true);
+
+        //Get and sort data
+        for (int i = 0; i < 5; i++)
+        {
+            for (int j = i + 1; j < 5; j++)
+            {
+                getHighScores[i] = SaveManager.Instance.state.highScoresSaved[i];
+                getHighScores[j] = SaveManager.Instance.state.highScoresSaved[j];
+                getHighScoreNames[i] = SaveManager.Instance.state.highScoreNameSaved[i];
+                getHighScoreNames[j] = SaveManager.Instance.state.highScoreNameSaved[j];
+                if (getHighScoreNames[i] == null) getHighScoreNames[i] = "---";
+                if (getHighScoreNames[j] == null) getHighScoreNames[j] = "---";
+                if (getHighScores[j] > getHighScores[i])
+                {
+                    //swap
+                    int tmpScore = getHighScores[i];
+                    getHighScores[i] = getHighScores[j];
+                    getHighScores[j] = tmpScore;
+                    string tmpName = getHighScoreNames[i];
+                    getHighScoreNames[i] = getHighScoreNames[j];
+                    getHighScoreNames[j] = tmpName;
+                }
+            }
+        }
+
+        for (int k = 0; k < 5; k++)
+        {
+            highScoreLocation.GetChild(k).GetChild(1).GetComponent<TextMeshProUGUI>().text = getHighScores[k].ToString();
+            highScoreLocation.GetChild(k).GetChild(2).GetComponent<TextMeshProUGUI>().text = getHighScoreNames[k];
+            Debug.Log("High Score:" + k + ": " + getHighScores[k] + " - " + getHighScoreNames[k]);
+        }    
+            
+        
+        highScoresScreen.SetActive(true);
         //AudioListener.pause = true;
         //Time.timeScale = 0;
     }
     public void HighScoresBackButtonInGame()
     {
         Debug.Log("High Scores Back Button");
-        highScores.SetActive(false);
+        highScoresScreen.SetActive(false);
         //AudioListener.pause = true;
         //Time.timeScale = 0;
     }
