@@ -11,9 +11,19 @@ public class gameManager : MonoBehaviour
     public bool startPlaying;
     public beatScroller theBS;
     public animStateController animStateControl;
+    public Rigidbody playerRb;
 
 
     public static gameManager instance;
+
+    public Vector3 playerMiddlePos;
+    public Vector3 playerLeftPos;
+    public float lerpDuration;
+    
+
+
+
+
 
     public int currentScore;
     public int scorePerNote = 100;
@@ -67,7 +77,8 @@ public class gameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {       
+    {
+        
         if( Time.timeSinceLevelLoad <= fadeInDuration )
         {
             // Initial Fade-in
@@ -90,7 +101,7 @@ public class gameManager : MonoBehaviour
         else
         {
             //Call results screen - DELETE EXIT AFTER 20S IN IF STATEMENT
-            if((!music.isPlaying && !resultsScreen.activeInHierarchy && !pauseScreen.activeInHierarchy) || Time.timeSinceLevelLoad >= 20f)
+            if((!music.isPlaying && !resultsScreen.activeInHierarchy && !pauseScreen.activeInHierarchy) || Time.timeSinceLevelLoad >= 50f)
             {
                 Debug.Log("Result Screen called");
                 resultsScreen.SetActive(true);
@@ -116,7 +127,52 @@ public class gameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
+       
     }
+
+
+    public void moveLeft()
+    {
+
+        //add move left rb transform
+
+        playerRb.MovePosition(Vector3.Lerp(playerMiddlePos, playerLeftPos, lerpDuration));
+
+
+
+    }
+
+    public void moveRight()
+    {
+
+        //add move right rb transform
+
+
+    }
+
+    public void flipTrick()
+    {
+
+        animStateControl.kickflipAnim = true;
+
+    }
+
+
+    public void grabTrick()
+    {
+
+        //add grab trick animation here
+
+    }
+
+    public void grindTrick()
+    {
+
+        //add grind trick animation here
+
+    }
+
+
 
 
     public void NoteHit()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,6 +321,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1306451838}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: fadeGroup
       value: 
       objectReference: {fileID: 1074731066}
@@ -353,6 +357,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941814268}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: perfectsText
       value: 
       objectReference: {fileID: 955023085914838680}
@@ -376,6 +384,10 @@ PrefabInstance:
       propertyPath: percentHitText
       value: 
       objectReference: {fileID: 955023085914838683}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: playerLeftPos.x
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: animStateControl
       value: 
@@ -812,6 +824,70 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Arrow Direction Triggers
       objectReference: {fileID: 0}
+    - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Right Movement Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Right Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Left Movement Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Left Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Right Trick Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Right Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Up Movement Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Up Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Down Trick Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Down Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Down Movement Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Down Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Left Trick Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Left Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_Name
+      value: Up Trick Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_TagString
+      value: Up Trigger
+      objectReference: {fileID: 0}
     - target: {fileID: 3973875591173848251, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1107,6 +1183,10 @@ PrefabInstance:
     - target: {fileID: 6818404869129596370, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6818404869129596374, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6818404869129596377, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
       propertyPath: m_Name
