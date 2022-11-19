@@ -12,17 +12,13 @@ public class gameManager : MonoBehaviour
     public beatScroller theBS;
     public animStateController animStateControl;
     public Rigidbody playerRb;
+    public Transform leftTarget;
+    public float leftRightSpeed;
+
+
 
 
     public static gameManager instance;
-
-    public Vector3 playerMiddlePos;
-    public Vector3 playerLeftPos;
-    public float lerpDuration;
-    
-
-
-
 
 
     public int currentScore;
@@ -79,6 +75,8 @@ public class gameManager : MonoBehaviour
     void Update()
     {
         
+
+
         if( Time.timeSinceLevelLoad <= fadeInDuration )
         {
             // Initial Fade-in
@@ -136,7 +134,9 @@ public class gameManager : MonoBehaviour
 
         //add move left rb transform
 
-        playerRb.MovePosition(Vector3.Lerp(playerMiddlePos, playerLeftPos, lerpDuration));
+        
+       
+
 
 
 
