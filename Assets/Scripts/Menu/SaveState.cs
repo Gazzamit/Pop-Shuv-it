@@ -5,7 +5,7 @@ public class SaveState
     public int routeOwned = 0;
     public int completedLevel;
 
-    public int activeSkin = 0;
+    public int activeSkinTShirt = 0;
     public int activeRoute = 0;
     public int menuIndexNumber;
     
