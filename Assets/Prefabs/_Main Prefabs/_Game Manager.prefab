@@ -44,10 +44,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f57ad850a4648c6aeacd7366a636c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPlayingALevel: 0
+  endOfLevel: 0
+  showFailed: 0
+  ShowHighScore: 0
+  ShowEnterName: 0
+  Pause: 0
+  newHighScore: 0
+  showResults: 0
+  showLevelScore: 0
+  pauseOptionsClicked: 0
+  showPauseOptions: 0
+  continueClicked: 0
+  exitClicked: 0
+  enterNameOKClicked: 0
+  checkIfHighScore: 1
+  HighScoresBackButtonClicked: 0
+  clickToRestartLevel: 0
+  clickToRestartLevelClicked: 0
+  canvasButtonClicked: 0
+  HighScoresButtonClicked: 0
   music: {fileID: 0}
-  startPlaying: 0
   theBS: {fileID: 0}
   animStateControl: {fileID: 0}
+  playerPOS: {fileID: 0}
+  leftTarget: {fileID: 0}
+  leftRightSpeed: 0
   currentScore: 0
   scorePerNote: 100
   scorePerGoodNote: 125
@@ -57,6 +79,15 @@ MonoBehaviour:
   goodHits: 0
   perfectHits: 0
   missedHits: 0
+  getHighScores: 0000000000000000000000000000000000000000
+  getHighScoreNames:
+  - 
+  - 
+  - 
+  - 
+  - 
+  newHighScoreName: 
+  highScoreLocation: {fileID: 0}
   percentHitText: {fileID: 0}
   normalsText: {fileID: 0}
   goodsText: {fileID: 0}
@@ -64,11 +95,25 @@ MonoBehaviour:
   missesText: {fileID: 0}
   finalScoreText: {fileID: 0}
   ArrowsParent: {fileID: 0}
+  arrowMissedCounter: 0
   resultsScreen: {fileID: 0}
   pauseScreen: {fileID: 0}
-  highScores: {fileID: 0}
+  ScoresScreenInsert: {fileID: 0}
+  highScoresScreen: {fileID: 0}
+  failedLevelScreen: {fileID: 0}
+  EnterNameScreen: {fileID: 0}
   scoreText: {fileID: 0}
   multiplierText: {fileID: 0}
+  enterNameInputField: {fileID: 0}
+  livesIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  LooseLifeAtCount: 01000000020000000300000004000000
+  livesLeft: 4
+  player: {fileID: 0}
+  playerBody: {fileID: 0}
   currentMultiplier: 0
   multiplierTracker: 0
   multiplierThreshold: 040000000800000010000000
@@ -104,5 +149,5 @@ Transform:
   m_Children:
   - {fileID: 424144295142780245}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
