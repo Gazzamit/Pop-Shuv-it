@@ -69,14 +69,14 @@ public class leftArrowTrigger : MonoBehaviour
                 gameManager.instance.NormalHit();
                 Instantiate(normalEffect, effectsOffset, Quaternion.identity);
             }
+
+
+
+
+            //call move left here
+
+            gameManager.instance.moveLeft();
             
-            // move right anim here
-            //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
-
-            //Kickflip animation trigger
-
-            animStateControl.kickflipAnim = true;
-
 
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);

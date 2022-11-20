@@ -18,9 +18,18 @@ public class gameManager : MonoBehaviour
     public AudioSource music; 
     public beatScroller theBS;
     public animStateController animStateControl;
+    public Transform playerPOS;
+    public Transform leftTarget;
+    public float leftRightSpeed;
+    private float elapsedTime;
+
+
+    
+
 
 
     public static gameManager instance;
+
 
     public int currentScore;
     public int scorePerNote = 100;
@@ -90,9 +99,11 @@ public class gameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {       
         // Initial Fade-in
         if( Time.timeSinceLevelLoad <= fadeInDuration )
+
         {
             // Initial Fade-in
             fadeGroup.alpha = 1 - (Time.timeSinceLevelLoad / fadeInDuration);
@@ -254,13 +265,70 @@ public class gameManager : MonoBehaviour
             }
         }
 
+
+        if (animStateControl.kickflipAnim == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
+
+        }
+
+
         //reset canvas clicked
         canvasButtonClicked = false;
 
     }
 
+
     /////////////////////////////
     //Arrow Hits scoring system//
+
+        public void moveLeft()
+
+    {
+
+        animStateControl.kickflipAnim = true;
+
+
+    }
+
+
+
+    public void moveRight()
+    {
+
+        //add move right rb transform
+
+
+    }
+
+    public void flipTrick()
+    {
+
+        //animStateControl.kickflipAnim = true;
+
+    }
+
+
+    public void grabTrick()
+    {
+
+        //add grab trick animation here
+
+    }
+
+    public void grindTrick()
+    {
+
+        //add grind trick animation here
+
+    }
+
+
     public void NoteHit()
     {
         //Debug.Log("Hit on Time");
