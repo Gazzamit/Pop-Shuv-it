@@ -12,9 +12,13 @@ public class gameManager : MonoBehaviour
     public beatScroller theBS;
     public animStateController animStateControl;
     public Rigidbody playerRb;
+    public Transform startPosition;
     public Transform leftTarget;
     public float leftRightSpeed;
+    private float elapsedTime;
 
+
+    
 
 
 
@@ -68,16 +72,18 @@ public class gameManager : MonoBehaviour
         // set fade to 1
         fadeGroup.alpha = 1;
 
+        isMoving = false;
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+
         
 
-
-        if( Time.timeSinceLevelLoad <= fadeInDuration )
+        if ( Time.timeSinceLevelLoad <= fadeInDuration )
         {
             // Initial Fade-in
             fadeGroup.alpha = 1 - (Time.timeSinceLevelLoad / fadeInDuration);
@@ -125,22 +131,33 @@ public class gameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
-       
+
+
+
+
+        //moves player left over time
+
+        elapsedTime += Time.deltaTime;
+
+        float percentageComplete = elapsedTime / leftRightSpeed;
+        playerRb.transform.position = Vector3.Lerp(startPosition.transform.position, leftTarget.transform.position, percentageComplete);
+
+
+
+
     }
 
 
     public void moveLeft()
+
     {
 
-        //add move left rb transform
-
-        
        
 
 
-
-
     }
+
+
 
     public void moveRight()
     {
@@ -153,7 +170,7 @@ public class gameManager : MonoBehaviour
     public void flipTrick()
     {
 
-        animStateControl.kickflipAnim = true;
+        //animStateControl.kickflipAnim = true;
 
     }
 
