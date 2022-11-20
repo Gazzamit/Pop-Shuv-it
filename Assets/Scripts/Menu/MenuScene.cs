@@ -39,7 +39,7 @@ public class MenuScene : MonoBehaviour
 
     private Vector3 desiredMenuPosition;
     public int referenceHorizontalResolution;
-    public String SceneToLoad;
+    //public String SceneToLoad;
 
 
     //Game fade in
@@ -53,12 +53,53 @@ public class MenuScene : MonoBehaviour
     public GameObject playerBodyInMenu;
     private Material[] signMaterials;
 
+    //public bool DdolSceneIsLoaded = false;
+    /*
+    public string targetScene;
+    public void LoadScene()
+    {
+        LoadingData.sceneToLoad = targetScene;
+        SceneManager.LoadScene("Loading");
+    }
+    */
+    private void Awake()
+    {
+
+    }
 
     private void Start()
     {
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         //SaveManager.Instance.state.token = 100; 
 
+ 
+        //SceneManager.LoadSceneAsync('DDOL');
+        //if (!SceneManager.GetSceneByName("DDOL").isLoaded)
+        /*
+        if (DdolSceneIsLoaded == false)
+        {
+            Debug.Log("BOOL is Scene Loaded DDOL" + SceneManager.GetSceneByName("DDOL").isLoaded);
+            StartCoroutine(LoadSceneAdditive(6));
+            //AsyncOperation operation = SceneManager.LoadSceneAsync(6, LoadSceneMode.Additive);
+            //SceneManager.LoadSceneAsync(6, LoadSceneMode.Additive);
+            //DdolSceneIsLoaded = true;
+        }
+        */
+         /*   while (!operation.isDone)
+            {
+                Debug.Log("DDOL loading...");
+                yield return null;
+
+            }
+            Debug.Log("DDOL Loaded");  
+            DdolSceneIsLoaded = true;
+        }
+        else
+        {
+            Debug.Log("SceneManager DDOL isLoaded");
+        }
+*/
+        //    Debug.Log("DDOL Loaded");   
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
 
@@ -78,14 +119,14 @@ public class MenuScene : MonoBehaviour
         InitLevel();
 
         //set player prefs for skin and route
-        OnSkinSelect(SaveManager.Instance.state.activeSkin);
-        SetSkin(SaveManager.Instance.state.activeSkin);
+        OnSkinSelect(SaveManager.Instance.state.activeSkinTShirt);
+        SetSkin(SaveManager.Instance.state.activeSkinTShirt);
 
         OnRouteSelect(SaveManager.Instance.state.activeRoute);
         SetRoute(SaveManager.Instance.state.activeRoute);
 
         // Make buttons bigger for the selected items above
-        skinPanel.GetChild(SaveManager.Instance.state.activeSkin).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
+        skinPanel.GetChild(SaveManager.Instance.state.activeSkinTShirt).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
         routePanel.GetChild(SaveManager.Instance.state.activeRoute).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
     }
 
@@ -152,7 +193,7 @@ public class MenuScene : MonoBehaviour
             
             img.color = Manager.Instance.playerTshirtColorOptions[currentIndex]; //player color from manager
             
-            //DNot using dimming - looked weird as selected colours changed when bought
+            //Not using dimming - looked weird as selected colours changed when bought
             //img.color = SaveManager.Instance.IsSkinOwned(i) 
             //    ? Manager.Instance.playerTshirtColorOptions[currentIndex] //player color from manager
             //    : Color.Lerp(Manager.Instance.playerTshirtColorOptions[currentIndex], new Color(0,0,0,1),0.25f); // dim the colour
@@ -258,20 +299,15 @@ public class MenuScene : MonoBehaviour
                 break;
         }
     }
-    //private void SetFocusTo( int menuIndex)
-    //{
-        //Set the Focus to the desired Menu Position (menuIndex set in Level Manager)
-    //    NavigateTo(menuIndex);
-        //menuContainer.anchoredPosition3D = desiredMenuPosition;
-    //}
+
     //----------------------------Shop---------------------------
     private void SetSkin (int index)
     {
         // set the active index on the model
         activeSkinIndex = index;
-        SaveManager.Instance.state.activeSkin = index;  //Set prefs
+        SaveManager.Instance.state.activeSkinTShirt = index;  //Set prefs
 
-        // TODO change skin on the model
+        // Get the T-shirt and change skin on the model
         Manager.Instance.playerMaterials = playerBodyInMenu.GetComponent<SkinnedMeshRenderer>().materials;
         
         //Debug Materials
@@ -494,6 +530,19 @@ public class MenuScene : MonoBehaviour
     }
 
     
+   IEnumerator LoadSceneAdditive(int buildIndex)
+        {
+            Debug.Log("Called LoadSceneAdditive. Bulid index:  " + buildIndex);
+            AsyncOperation operation = SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive);
+    
+            while (!operation.isDone)
+            {
+                Debug.Log("DDOL loading...");
+                yield return null;
+
+            }
+            Debug.Log("DDOL Loaded");            //Done
+        }
 
 
 }
