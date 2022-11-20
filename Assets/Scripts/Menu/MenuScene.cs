@@ -53,15 +53,6 @@ public class MenuScene : MonoBehaviour
     public GameObject playerBodyInMenu;
     private Material[] signMaterials;
 
-    //public bool DdolSceneIsLoaded = false;
-    /*
-    public string targetScene;
-    public void LoadScene()
-    {
-        LoadingData.sceneToLoad = targetScene;
-        SceneManager.LoadScene("Loading");
-    }
-    */
     private void Awake()
     {
 
@@ -72,34 +63,6 @@ public class MenuScene : MonoBehaviour
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         //SaveManager.Instance.state.token = 100; 
 
- 
-        //SceneManager.LoadSceneAsync('DDOL');
-        //if (!SceneManager.GetSceneByName("DDOL").isLoaded)
-        /*
-        if (DdolSceneIsLoaded == false)
-        {
-            Debug.Log("BOOL is Scene Loaded DDOL" + SceneManager.GetSceneByName("DDOL").isLoaded);
-            StartCoroutine(LoadSceneAdditive(6));
-            //AsyncOperation operation = SceneManager.LoadSceneAsync(6, LoadSceneMode.Additive);
-            //SceneManager.LoadSceneAsync(6, LoadSceneMode.Additive);
-            //DdolSceneIsLoaded = true;
-        }
-        */
-         /*   while (!operation.isDone)
-            {
-                Debug.Log("DDOL loading...");
-                yield return null;
-
-            }
-            Debug.Log("DDOL Loaded");  
-            DdolSceneIsLoaded = true;
-        }
-        else
-        {
-            Debug.Log("SceneManager DDOL isLoaded");
-        }
-*/
-        //    Debug.Log("DDOL Loaded");   
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
 
