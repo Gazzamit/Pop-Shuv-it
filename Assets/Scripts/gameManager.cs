@@ -11,8 +11,7 @@ public class gameManager : MonoBehaviour
     public bool startPlaying;
     public beatScroller theBS;
     public animStateController animStateControl;
-    public Rigidbody playerRb;
-    public Transform startPosition;
+    public Transform playerPOS;
     public Transform leftTarget;
     public float leftRightSpeed;
     private float elapsedTime;
@@ -72,8 +71,7 @@ public class gameManager : MonoBehaviour
         // set fade to 1
         fadeGroup.alpha = 1;
 
-        isMoving = false;
-
+      
 
     }
 
@@ -135,12 +133,20 @@ public class gameManager : MonoBehaviour
 
 
 
-        //moves player left over time
 
-        elapsedTime += Time.deltaTime;
+        if (animStateControl.kickflipAnim == true)
+        {
 
-        float percentageComplete = elapsedTime / leftRightSpeed;
-        playerRb.transform.position = Vector3.Lerp(startPosition.transform.position, leftTarget.transform.position, percentageComplete);
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
+
+
+
+        }
+
 
 
 
@@ -148,11 +154,13 @@ public class gameManager : MonoBehaviour
     }
 
 
-    public void moveLeft()
+
+
+        public void moveLeft()
 
     {
 
-       
+        animStateControl.kickflipAnim = true;
 
 
     }

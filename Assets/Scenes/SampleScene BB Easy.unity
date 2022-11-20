@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,42 +200,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2729673854571776191, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
   m_PrefabInstance: {fileID: 955023085914838677}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &424317615 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1281666336935158242, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
-  m_PrefabInstance: {fileID: 1949406416}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &489157184
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 489157185}
-  m_Layer: 0
-  m_Name: startTarget
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &489157185
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 489157184}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 424317615}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &498942644 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4265300933325293117, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
@@ -286,6 +250,11 @@ CanvasGroup:
 --- !u!54 &1166583960 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6818404869129596374, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
+  m_PrefabInstance: {fileID: 6818404867980903758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1166583961 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6818404869129596370, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
   m_PrefabInstance: {fileID: 6818404867980903758}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &1237744899 stripped
@@ -398,13 +367,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8373712
+      objectReference: {fileID: 0}
+    - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1281666336935158242, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 489157185}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
 --- !u!1 &2029109518 stripped
 GameObject:
@@ -444,6 +418,10 @@ PrefabInstance:
       propertyPath: goodsText
       value: 
       objectReference: {fileID: 955023085914838681}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: playerPOS
+      value: 
+      objectReference: {fileID: 1166583961}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: scoreText
       value: 
@@ -491,7 +469,7 @@ PrefabInstance:
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: startPosition
       value: 
-      objectReference: {fileID: 489157185}
+      objectReference: {fileID: 0}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: finalScoreText
       value: 
@@ -1268,6 +1246,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2128832151, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
+      propertyPath: kickflipAnim
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6818404869129596370, guid: 3181f6a4c02ca4750bcc55b5c946bfd6, type: 3}
       propertyPath: m_RootOrder
       value: 0
