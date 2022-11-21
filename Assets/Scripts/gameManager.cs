@@ -13,13 +13,15 @@ public class gameManager : MonoBehaviour
     public animStateController animStateControl;
     public Transform playerPOS;
     public Transform leftTarget;
+    public Transform rightTarget;
     public float leftRightSpeed;
     private float elapsedTime;
     public bool movingLeft_ML = false;
+    public bool movingRight_MR = false;
 
 
 
-    
+
 
 
 
@@ -135,7 +137,7 @@ public class gameManager : MonoBehaviour
 
 
 
-
+        //move from middle to left
         if (movingLeft_ML == true)
         {
 
@@ -153,6 +155,31 @@ public class gameManager : MonoBehaviour
             }
 
         }
+
+
+        //move from middle to right
+        if (movingRight_MR == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
+
+            if (playerPOS.transform.position == rightTarget.transform.position)
+            {
+
+                movingRight_MR = false;
+
+            }
+
+        }
+
+
+
+
+
 
 
 
@@ -175,10 +202,10 @@ public class gameManager : MonoBehaviour
 
 
 
-    public void moveRight()
+    public void moveRight_MR()
     {
 
-        //add move right rb transform
+        movingRight_MR = true;
 
 
     }

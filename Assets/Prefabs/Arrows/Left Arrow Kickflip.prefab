@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1359323745440594446}
   - component: {fileID: 5106821504206706657}
   - component: {fileID: 4568045228967241366}
-  - component: {fileID: -1535383354744913289}
+  - component: {fileID: -7171314126490104945}
   m_Layer: 6
-  m_Name: Left Arrow M_L
+  m_Name: Left Arrow Kickflip
   m_TagString: Arrow Left
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710924215298218971}
   m_LocalRotation: {x: -0.0076885293, y: -0.707065, z: -0.0076885293, w: 0.707065}
-  m_LocalPosition: {x: -9, y: -0.7, z: -1.55}
+  m_LocalPosition: {x: -9, y: -0.7, z: 23}
   m_LocalScale: {x: 50, y: 67.71818, z: 43.789196}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -116,7 +116,7 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 05cbf228c762b4149b2b98f405a20bd4, type: 3}
---- !u!114 &-1535383354744913289
+--- !u!114 &-7171314126490104945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 710924215298218971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4031b63353ba4434ca542db4b6008c14, type: 3}
+  m_Script: {fileID: 11500000, guid: 91eb231aea61646bbb760d6086be9e7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}

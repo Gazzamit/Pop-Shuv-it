@@ -365,18 +365,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.8373712
-      objectReference: {fileID: 0}
-    - target: {fileID: 6389143793136053934, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
@@ -384,6 +372,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4315695566936743473, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
   m_PrefabInstance: {fileID: 955023085914838677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2040358055 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2040358055, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
+  m_PrefabInstance: {fileID: 1949406416}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2143466525 stripped
 Transform:
@@ -446,6 +439,10 @@ PrefabInstance:
       propertyPath: pauseScreen
       value: 
       objectReference: {fileID: 1344275967}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: rightTarget
+      value: 
+      objectReference: {fileID: 2040358055}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: ArrowsParent
       value: 
@@ -932,7 +929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Right Movement Trigger
+      value: Left_Right Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -948,7 +945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Left Movement Trigger
+      value: Left_Left_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -960,7 +957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Right Trick Trigger
+      value: Right_Right_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -972,7 +969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Up Movement Trigger
+      value: Left_Up_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -984,7 +981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Down Trick Trigger
+      value: Right_Down_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -996,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Down Movement Trigger
+      value: Left_Down_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -1004,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Left Trick Trigger
+      value: Right_Left_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -1020,7 +1017,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
-      value: Up Trick Trigger
+      value: Right_Up_Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
@@ -1404,6 +1401,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 753189009566653005, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -1453,46 +1458,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1166583960}
     - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: goodEffect
-      value: 
-      objectReference: {fileID: 5082830382237197120, guid: 8b6668bcd3d054eccb2d754e0583d8d8, type: 3}
-    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: missEffect
-      value: 
-      objectReference: {fileID: 8107295890765367356, guid: 638bcef82a80b41fda6e9f664fab3b20, type: 3}
-    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: normalEffect
-      value: 
-      objectReference: {fileID: 861541042725815941, guid: 9c182cb2aa5ad4abf87ed1fc6ca86f97, type: 3}
-    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: perfectEffect
-      value: 
-      objectReference: {fileID: 3864207848644847806, guid: 67570403bd2154f6a87ca14157d78f80, type: 3}
-    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 4900246807409301706, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+    - target: {fileID: 6637449116968925407, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 1166583960}
-    - target: {fileID: 4900246807409301706, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: animStateControl
-      value: 
-      objectReference: {fileID: 1387062144}
-    - target: {fileID: 6413425789495308139, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 6413425789495308139, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: animStateControl
-      value: 
-      objectReference: {fileID: 1387062144}
-    - target: {fileID: 6413425790087646262, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 6413425790087646262, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+    - target: {fileID: 6637449116968925407, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
@@ -1504,6 +1477,10 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 7408035672917229827, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.75
+      objectReference: {fileID: 0}
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
       value: _Moving Level Objects
@@ -1516,6 +1493,14 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 7891838843124915129, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970980996122903444, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
