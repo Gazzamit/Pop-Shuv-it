@@ -18305,11 +18305,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 186447907130605921, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.05
+      value: 9.85
       objectReference: {fileID: 0}
     - target: {fileID: 186447907130605921, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 186447907130605921, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -18347,6 +18347,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Arrow Kickflip
       objectReference: {fileID: 0}
+    - target: {fileID: 710924215298218971, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -1535383354744913289, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
     - {fileID: -7171314126490104945, guid: a2a254b7fc4c542158fc01d3aa4bf89c, type: 3}
@@ -18376,7 +18380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   animStateControl: {fileID: 0}
-  earlyHitPos: 1.9
+  earlyHitPos: 0
   centreHitPos: -0.63
   lateHitPos: -2
   normalEffect: {fileID: 861541042725815941, guid: 9c182cb2aa5ad4abf87ed1fc6ca86f97, type: 3}
