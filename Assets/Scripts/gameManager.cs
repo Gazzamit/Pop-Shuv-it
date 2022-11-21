@@ -15,6 +15,8 @@ public class gameManager : MonoBehaviour
     public Transform leftTarget;
     public float leftRightSpeed;
     private float elapsedTime;
+    public bool movingLeft = false;
+
 
 
     
@@ -134,7 +136,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        if (animStateControl.kickflipAnim == true)
+        if (movingLeft == true)
         {
 
             elapsedTime += Time.deltaTime;
@@ -143,7 +145,12 @@ public class gameManager : MonoBehaviour
 
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
 
+            if (playerPOS.transform.position == leftTarget.transform.position)
+            {
 
+                movingLeft = false;
+
+            }
 
         }
 
@@ -160,7 +167,8 @@ public class gameManager : MonoBehaviour
 
     {
 
-        animStateControl.kickflipAnim = true;
+
+        movingLeft = true;
 
 
     }
