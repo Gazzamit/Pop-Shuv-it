@@ -23,7 +23,7 @@ public class gameManager : MonoBehaviour
     public float leftRightSpeed;
     private float elapsedTime;
 
-
+    public GameObject CanvasButton; 
     
 
 
@@ -77,6 +77,13 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //init Canvas play button
+        CanvasButton = GameObject.Find("ScreenCanvasButtonClick");
+
+        Button b = CanvasButton.transform.GetComponent<Button>();
+        b.onClick.AddListener(()=>CanvasButtonClick());
+        Debug.Log("Canvas Button Init: " + CanvasButton.name);
+        
         Selection.activeGameObject = gameObject;
        
         instance = this;
