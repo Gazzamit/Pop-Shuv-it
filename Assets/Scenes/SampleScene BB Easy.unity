@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1406,6 +1406,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1166583960}
     - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: earlyHitPos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
@@ -1479,7 +1483,15 @@ PrefabInstance:
       objectReference: {fileID: 1387062144}
     - target: {fileID: 7408035672917229827, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.75
+      value: 9.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408035672917229827, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408035672917229827, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
@@ -1496,6 +1508,10 @@ PrefabInstance:
     - target: {fileID: 7891838843124915129, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891838843124915129, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8970980996122903444, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_IsActive
