@@ -15,7 +15,7 @@ public class gameManager : MonoBehaviour
     public Transform leftTarget;
     public float leftRightSpeed;
     private float elapsedTime;
-    public bool movingLeft = false;
+    public bool movingLeft_ML = false;
 
 
 
@@ -136,7 +136,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        if (movingLeft == true)
+        if (movingLeft_ML == true)
         {
 
             elapsedTime += Time.deltaTime;
@@ -148,7 +148,7 @@ public class gameManager : MonoBehaviour
             if (playerPOS.transform.position == leftTarget.transform.position)
             {
 
-                movingLeft = false;
+                movingLeft_ML = false;
 
             }
 
@@ -163,12 +163,12 @@ public class gameManager : MonoBehaviour
 
 
 
-        public void moveLeft()
+        public void moveLeft_ML()
 
     {
 
 
-        movingLeft = true;
+        movingLeft_ML = true;
 
 
     }

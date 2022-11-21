@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -938,6 +938,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Right Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3459298683253736355, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683298062876, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
       value: Left Movement Trigger
@@ -945,6 +953,10 @@ PrefabInstance:
     - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
       value: Left Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298683580577510, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
@@ -954,6 +966,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Right Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3459298684138632428, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
       value: Up Movement Trigger
@@ -962,6 +978,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Up Trigger
       objectReference: {fileID: 0}
+    - target: {fileID: 3459298684324982806, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
       value: Down Trick Trigger
@@ -969,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
       value: Down Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684836238040, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
@@ -985,6 +1009,14 @@ PrefabInstance:
     - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_TagString
       value: Left Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298684866990731, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3459298685274509006, guid: 46605004830ce495bb9807336db24aff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_Name
@@ -1416,6 +1448,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: goodEffect
+      value: 
+      objectReference: {fileID: 5082830382237197120, guid: 8b6668bcd3d054eccb2d754e0583d8d8, type: 3}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: missEffect
+      value: 
+      objectReference: {fileID: 8107295890765367356, guid: 638bcef82a80b41fda6e9f664fab3b20, type: 3}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: normalEffect
+      value: 
+      objectReference: {fileID: 861541042725815941, guid: 9c182cb2aa5ad4abf87ed1fc6ca86f97, type: 3}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: perfectEffect
+      value: 
+      objectReference: {fileID: 3864207848644847806, guid: 67570403bd2154f6a87ca14157d78f80, type: 3}
+    - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 4900246807409301706, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
