@@ -21,7 +21,7 @@ public class dragging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.instance.pauseScreen.activeInHierarchy) 
+        if (!gameManager.instance.showPauseOptions) // requires preloader
         {
             Vector3 v3;
             if (Input.touchCount != 1)

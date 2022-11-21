@@ -23,13 +23,10 @@ public class gameManager : MonoBehaviour
     public float leftRightSpeed;
     private float elapsedTime;
 
-    public GameObject CanvasButton; 
+    private GameObject[] GameObjectWithButton = new GameObject [9];
+    private Button[] b = new Button [9]; 
     
-
-
-
     public static gameManager instance;
-
 
     public int currentScore;
     public int scorePerNote = 100;
@@ -77,13 +74,61 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //init Canvas play button
-        CanvasButton = GameObject.Find("ScreenCanvasButtonClick");
-
-        Button b = CanvasButton.transform.GetComponent<Button>();
-        b.onClick.AddListener(()=>CanvasButtonClick());
-        Debug.Log("Canvas Button Init: " + CanvasButton.name);
+        //init buttons
+        GameObjectWithButton[0] = GameObject.Find("ScreenCanvasButtonClick");
+        b[0] = GameObjectWithButton[0].GetComponent<Button>();
+        b[0].onClick.AddListener(()=>CanvasButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[0].name);
         
+        GameObjectWithButton[1] = GameObject.Find("PauseOptionsClick");
+        b[1] = GameObjectWithButton[1].GetComponent<Button>();
+        b[1].onClick.AddListener(()=>PauseOptionsClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[1].name);
+        
+        GameObjectWithButton[2] = GameObject.Find("endTheLevelNowButtonClick");
+        b[2] = GameObjectWithButton[2].GetComponent<Button>();
+        b[2].onClick.AddListener(()=>endTheLevelNowButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[2].name);
+
+
+/* THESE NEEDS CHECKING
+
+
+        //inactive so find active parent`
+        GameObjectWithButton[3] = GameObject.Find("ParentPauseOptionsMenu");
+        b[3] = GameObjectWithButton[3].transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        b[3].onClick.AddListener(()=>UnlockNextLevel());
+        Debug.Log("Button Init: " + GameObjectWithButton[3].name);
+        //inactive so find active parent`
+        GameObjectWithButton[4] = GameObject.Find("ParentPauseOptionsMenu");
+        b[4] = GameObjectWithButton[4].transform.GetChild(0).GetChild(3).GetComponent<Button>();
+        b[4].onClick.AddListener(()=>ContinueButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[4].name);
+        //inactive so find active parent`
+        GameObjectWithButton[5] = GameObject.Find("ParentPauseOptionsMenu");
+        b[5] = GameObjectWithButton[5].transform.GetChild(0).GetChild(4).GetComponent<Button>();
+        b[5].onClick.AddListener(()=>PauseOptionsMenuClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[5].name);
+
+        GameObjectWithButton[6] = GameObject.Find("ParentHighScoresInGame");
+        b[6] = GameObjectWithButton[6].transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        b[6].onClick.AddListener(()=>HighScoresButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[6].name);
+
+        GameObjectWithButton[7] = GameObject.Find("HighScoresBackButtonClick");
+        b[7] = GameObjectWithButton[7].GetComponent<Button>();
+        b[7].onClick.AddListener(()=>HighScoresBackButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[7].name);
+
+        GameObjectWithButton[8] = GameObject.Find("EnterNameOKButtonClick");
+        b[8] = GameObjectWithButton[8].GetComponent<Button>();
+        b[8].onClick.AddListener(()=>EnterNameOKButtonClick());
+        Debug.Log("Button Init: " + GameObjectWithButton[8].name);
+
+
+*/
+
+
         Selection.activeGameObject = gameObject;
        
         instance = this;
@@ -405,7 +450,7 @@ public class gameManager : MonoBehaviour
     //////////BUTTONS//////////
 
     //For testing completion of level
-    public void CompleteLevelButton()
+    public void UnlockNextLevel()
     {
         Debug.Log("Completed level and saved progress: " + Manager.Instance.currentLevel); //Works from Preloader only (to access Manager)
         SaveManager.Instance.CompleteLevel(Manager.Instance.currentLevel); //Works from Preloader only (to access Manager)
@@ -430,7 +475,7 @@ public class gameManager : MonoBehaviour
     }
 
     //Click Exit (inside pause screen)
-    public void ExitClick()
+    public void PauseOptionsMenuClick()
     {
         Debug.Log("Exit Clicked");
         exitClicked = true;
