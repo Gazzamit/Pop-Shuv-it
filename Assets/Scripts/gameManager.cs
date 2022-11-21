@@ -187,6 +187,7 @@ public class gameManager : MonoBehaviour
 
             if(HighScoresButtonClicked) //high score clicked
             {
+                ShowHighScore = true;
                 SortHighScores(); //Retrieve and Sort so that can calc if high score
                 PrepareHighScoresForDisplay(); 
                 ShowHighScoreScreen();
@@ -213,6 +214,7 @@ public class gameManager : MonoBehaviour
                 HideHighScoreScreen();
                 HideEnterNameScreen();
                 HighScoresBackButtonClicked = false;
+                ShowHighScore = false;
             }
         }
        
@@ -651,6 +653,7 @@ public class gameManager : MonoBehaviour
     {
         Debug.Log("RUN FROM PRELOADER - Sort High Scores from player prefs");
         //Get and sort data
+        Debug.Log("PRELOADER required");
         for (int i = 0; i < 5; i++)
         {
             for (int j = i + 1; j < 5; j++)
