@@ -22,6 +22,8 @@ public class gameManager : MonoBehaviour
     public Transform leftTarget;
     public float leftRightSpeed;
     private float elapsedTime;
+    private bool movingLeft = false;
+
 
     private GameObject[] GameObjectWithButton = new GameObject [9];
     private Button[] b = new Button [9]; 
@@ -318,7 +320,7 @@ public class gameManager : MonoBehaviour
         }
 
 
-        if (animStateControl.kickflipAnim == true)
+        if (movingLeft == true)
         {
 
             elapsedTime += Time.deltaTime;
@@ -343,7 +345,7 @@ public class gameManager : MonoBehaviour
 
     {
 
-        animStateControl.kickflipAnim = true;
+        movingLeft = true;
 
 
     }
