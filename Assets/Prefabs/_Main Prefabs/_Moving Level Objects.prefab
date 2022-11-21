@@ -17037,11 +17037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5171945065394639881, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 5171945065394639881, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17
+      value: 14.25
       objectReference: {fileID: 0}
     - target: {fileID: 5171945065394639881, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17074,6 +17074,10 @@ PrefabInstance:
     - target: {fileID: 5516241101094047411, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
       propertyPath: m_Name
       value: Up Arrow Obj
+      objectReference: {fileID: 0}
+    - target: {fileID: 5516241101094047411, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6733296013753945629, guid: b2630e718691c44b9b262d239a9b9d58, type: 3}
       propertyPath: playerRb
@@ -18245,7 +18249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 186447907130605921, guid: fd9ebe35b885a45b082392c785535771, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.9
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 186447907130605921, guid: fd9ebe35b885a45b082392c785535771, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18278,6 +18282,10 @@ PrefabInstance:
     - target: {fileID: 710924215298218971, guid: fd9ebe35b885a45b082392c785535771, type: 3}
       propertyPath: m_Name
       value: Left Arrow obj (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 710924215298218971, guid: fd9ebe35b885a45b082392c785535771, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4420798246738886394, guid: fd9ebe35b885a45b082392c785535771, type: 3}
       propertyPath: playerRb
@@ -18395,6 +18403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Down Arrow Obj
       objectReference: {fileID: 0}
+    - target: {fileID: 1740526891407416089, guid: aa686b0b70a3a47cfbabfef73f0b611e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: aa686b0b70a3a47cfbabfef73f0b611e, type: 3}
@@ -18471,6 +18483,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Left Arrow obj
       objectReference: {fileID: 0}
+    - target: {fileID: 710924215298218971, guid: fd9ebe35b885a45b082392c785535771, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4420798246738886394, guid: fd9ebe35b885a45b082392c785535771, type: 3}
       propertyPath: playerRb
       value: 
@@ -18510,6 +18526,10 @@ PrefabInstance:
     - target: {fileID: 1527335151227475176, guid: 00af715741cee496196bdac3577e18bd, type: 3}
       propertyPath: m_Name
       value: Right Arrow Obj
+      objectReference: {fileID: 0}
+    - target: {fileID: 1527335151227475176, guid: 00af715741cee496196bdac3577e18bd, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 2196067316508249682, guid: 00af715741cee496196bdac3577e18bd, type: 3}
       propertyPath: m_RootOrder

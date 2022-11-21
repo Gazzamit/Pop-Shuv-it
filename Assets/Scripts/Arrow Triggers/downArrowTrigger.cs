@@ -19,16 +19,16 @@ public class downArrowTrigger : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {   
-        if (collision.gameObject.CompareTag("Arrow Trigger"))
+        if (collision.gameObject.CompareTag("Arrow Trigger")) // Do not change
         {
             //Debug.Log(collision.gameObject.name);
-            gameObject.tag = "Down Arrow";
+            gameObject.tag = "Down Arrow"; //This script is a component of a Arrow Prefab with similar name
 
         }
 
-        if (collision.gameObject.CompareTag("Down Trigger"))
+        if (collision.gameObject.CompareTag("Down Trigger")) //Down arrow needs down trigger for correct movement
         {
-            if(dragging.touchSide == "Left")
+            if(dragging.touchSide == "Left") //Set to Left or Right to make the effect appear that side
             {
                 effectsOffset = new Vector3 (-4.62f,2.43f,-5.43f); // Left offset for perfect / good / normal text
             }
@@ -77,6 +77,7 @@ public class downArrowTrigger : MonoBehaviour
 
         }
 
+        //This is a list of incorrect movements
         if (collision.gameObject.CompareTag("Left Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Right Trigger"))
         {
             gameManager.instance.WrongDirection();
@@ -85,6 +86,7 @@ public class downArrowTrigger : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        //This triggers after anything hits it on either side. Don not chenge.
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             gameManager.instance.NoteMissed();

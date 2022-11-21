@@ -74,60 +74,61 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //init buttons
+        //init UI buttons
+        
+        //canvas click
         GameObjectWithButton[0] = GameObject.Find("ScreenCanvasButtonClick");
         b[0] = GameObjectWithButton[0].GetComponent<Button>();
         b[0].onClick.AddListener(()=>CanvasButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[0].name);
+        Debug.Log("Init CanvasButtonClick: " + GameObjectWithButton[0].name);
         
+        //pause options click
         GameObjectWithButton[1] = GameObject.Find("PauseOptionsClick");
         b[1] = GameObjectWithButton[1].GetComponent<Button>();
         b[1].onClick.AddListener(()=>PauseOptionsClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[1].name);
+        Debug.Log("Init PauseOptionsClick: " + GameObjectWithButton[1].name);
         
-        GameObjectWithButton[2] = GameObject.Find("endTheLevelNowButtonClick");
-        b[2] = GameObjectWithButton[2].GetComponent<Button>();
+        //end level now TEMP buton
+        GameObjectWithButton[2] = GameObject.Find("ParentendTheLevelNowButtonClick");
+        b[2] = GameObjectWithButton[2].transform.GetChild(0).GetComponent<Button>();
         b[2].onClick.AddListener(()=>endTheLevelNowButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[2].name);
+        Debug.Log("Init endTheLevelNowButtonClick: " + GameObjectWithButton[2].transform.GetChild(0).name);
 
-
-/* THESE NEEDS CHECKING
-
-
-        //inactive so find active parent`
-        GameObjectWithButton[3] = GameObject.Find("ParentPauseOptionsMenu");
-        b[3] = GameObjectWithButton[3].transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        //Unlock next level
+        GameObjectWithButton[3] = GameObject.Find("ParentUnlockNextLevel");
+        b[3] = GameObjectWithButton[3].transform.GetChild(0).GetComponent<Button>();
         b[3].onClick.AddListener(()=>UnlockNextLevel());
-        Debug.Log("Button Init: " + GameObjectWithButton[3].name);
-        //inactive so find active parent`
+        Debug.Log("Init UnlockNextLevel: " + GameObjectWithButton[3].transform.GetChild(0).name);
+
+        //Continue button click
         GameObjectWithButton[4] = GameObject.Find("ParentPauseOptionsMenu");
-        b[4] = GameObjectWithButton[4].transform.GetChild(0).GetChild(3).GetComponent<Button>();
+        b[4] = GameObjectWithButton[4].transform.GetChild(0).GetChild(2).GetComponent<Button>();
         b[4].onClick.AddListener(()=>ContinueButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[4].name);
-        //inactive so find active parent`
+        Debug.Log("Init ContinueButtonClick: " + GameObjectWithButton[4].transform.GetChild(0).GetChild(2).name);
+
+        //Pause option - Menu click
         GameObjectWithButton[5] = GameObject.Find("ParentPauseOptionsMenu");
-        b[5] = GameObjectWithButton[5].transform.GetChild(0).GetChild(4).GetComponent<Button>();
+        b[5] = GameObjectWithButton[5].transform.GetChild(0).GetChild(3).GetComponent<Button>();
         b[5].onClick.AddListener(()=>PauseOptionsMenuClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[5].name);
+        Debug.Log("Init PauseOptionsMenuClick: " + GameObjectWithButton[5].transform.GetChild(0).GetChild(3).name);
 
-        GameObjectWithButton[6] = GameObject.Find("ParentHighScoresInGame");
-        b[6] = GameObjectWithButton[6].transform.GetChild(0).GetChild(2).GetComponent<Button>();
+        //High score button click
+        GameObjectWithButton[6] = GameObject.Find("ParentPauseOptionsMenu");
+        b[6] = GameObjectWithButton[6].transform.GetChild(0).GetChild(4).GetComponent<Button>();
         b[6].onClick.AddListener(()=>HighScoresButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[6].name);
+        Debug.Log("Init HighScoresButtonClick: " + GameObjectWithButton[6].transform.GetChild(0).GetChild(4).name);
 
-        GameObjectWithButton[7] = GameObject.Find("HighScoresBackButtonClick");
-        b[7] = GameObjectWithButton[7].GetComponent<Button>();
+        //High Score Back Button
+        GameObjectWithButton[7] = GameObject.Find("ParentHighScoresInGame");
+        b[7] = GameObjectWithButton[7].transform.GetChild(0).GetChild(2).GetComponent<Button>();
         b[7].onClick.AddListener(()=>HighScoresBackButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[7].name);
+        Debug.Log("Init HighScoresBackButtonClick: " + GameObjectWithButton[7].transform.GetChild(0).GetChild(2).name);
 
-        GameObjectWithButton[8] = GameObject.Find("EnterNameOKButtonClick");
-        b[8] = GameObjectWithButton[8].GetComponent<Button>();
+        //Enter Name button inside high scores
+        GameObjectWithButton[8] = GameObject.Find("ParentHighScoresInGame");
+        b[8] = GameObjectWithButton[8].transform.GetChild(0).GetChild(4).GetChild(4).GetComponent<Button>();
         b[8].onClick.AddListener(()=>EnterNameOKButtonClick());
-        Debug.Log("Button Init: " + GameObjectWithButton[8].name);
-
-
-*/
-
+        Debug.Log("Init EnterNameOKButtonClick: " + GameObjectWithButton[8].transform.GetChild(0).GetChild(4).GetChild(4).name);
 
         Selection.activeGameObject = gameObject;
        

@@ -21,7 +21,7 @@ public class dragging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameManager.instance.showPauseOptions) // requires preloader
+        if (!gameManager.instance.showPauseOptions) // Prevent Drag on Pause Screen. requires preloader
         {
             Vector3 v3;
             if (Input.touchCount != 1)
@@ -45,7 +45,7 @@ public class dragging : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, 999f, arrows))
                 {
 
-                    // Left Arrow
+                    // Add New Tricks / Arrow Tags here with || 
                     if (hit.collider.tag == "Left Arrow" || hit.collider.tag == "Right Arrow" || hit.collider.tag == "Up Arrow" || hit.collider.tag == "Down Arrow")
                     {
                         Rigidbody arrowRigidbody;
