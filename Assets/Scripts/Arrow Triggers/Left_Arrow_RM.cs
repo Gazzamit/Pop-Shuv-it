@@ -86,6 +86,7 @@ public class Left_Arrow_RM : MonoBehaviour
         {
             //put in a destroy animation and end combo trigger here
             gameManager.instance.WrongDirection();
+            gameManager.instance.moveLeft_RM();
             gameObject.SetActive(false);
 
         }
@@ -96,6 +97,7 @@ public class Left_Arrow_RM : MonoBehaviour
             //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
             animStateControl.wobbleAnim = true;
             gameManager.instance.NoteMissed();
+            gameManager.instance.moveLeft_RM();
             gameObject.SetActive(false);
 
         }

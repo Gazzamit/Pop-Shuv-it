@@ -90,6 +90,7 @@ public class Right_Arrow_M_R : MonoBehaviour
         if (collision.gameObject.CompareTag("Left Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Down Trigger"))
         {
             gameManager.instance.WrongDirection();
+            gameManager.instance.moveRight_MR();
 
             //put in a destroy animation and end combo trigger here
             gameObject.SetActive(false);
@@ -98,6 +99,7 @@ public class Right_Arrow_M_R : MonoBehaviour
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             gameManager.instance.NoteMissed();
+            gameManager.instance.moveRight_MR();
             // playerRb.transform.Translate(3.0f, 0f, 0f);
             animStateControl.wobbleAnim = true;
 

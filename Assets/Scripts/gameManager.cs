@@ -20,6 +20,7 @@ public class gameManager : MonoBehaviour
     public bool movingLeft_ML = false;
     public bool movingLeft_RM = false;
     public bool movingRight_MR = false;
+    public bool movingRight_LM = false;
     public static gameManager instance;
     public int currentScore;
     public int scorePerNote = 100;
@@ -54,6 +55,8 @@ public class gameManager : MonoBehaviour
     public AnimationCurve lerpMovingLeft_ML;
     public AnimationCurve lerpMovingLeft_RM;
     public AnimationCurve lerpMovingRight_MR;
+    public AnimationCurve lerpMovingRight_LM;
+
 
     // Start is called before the first frame update
     void Start()
@@ -134,7 +137,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        //move from middle to left
+        //moving left from middle to left
         if (movingLeft_ML == true)
         {
 
@@ -144,6 +147,12 @@ public class gameManager : MonoBehaviour
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, lerpMovingLeft_ML.Evaluate(percentageComplete));
             //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
             animStateControl.leaningLeftAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningLeftAnim = false;
+
+            }
 
             if (playerPOS.transform.position == leftTarget.transform.position)
             {
@@ -157,7 +166,7 @@ public class gameManager : MonoBehaviour
         }
 
 
-        //move from right to middle
+        //moving left from right to middle
         if (movingLeft_RM == true)
         {
 
@@ -167,6 +176,14 @@ public class gameManager : MonoBehaviour
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, lerpMovingLeft_RM.Evaluate(percentageComplete));
             //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, percentageComplete);
             animStateControl.leaningLeftAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningLeftAnim = false;
+
+            }
+
+
 
             if (playerPOS.transform.position == middleTarget.transform.position)
             {
@@ -180,7 +197,7 @@ public class gameManager : MonoBehaviour
 
 
 
-        //move from middle to right
+        //moving right from middle to right
         if (movingRight_MR == true)
         {
 
@@ -189,18 +206,55 @@ public class gameManager : MonoBehaviour
 
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, lerpMovingRight_MR.Evaluate(percentageComplete));
             //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
+            animStateControl.leaningRightAnim = true;
 
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningRightAnim = false;
 
+            }
 
             if (playerPOS.transform.position == rightTarget.transform.position)
             {
 
                 movingRight_MR = false;
+                animStateControl.leaningRightAnim = false;
                 elapsedTime = 0;
 
             }
 
         }
+
+
+        //moving right from left to middle
+        if (movingRight_LM == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, lerpMovingRight_LM.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, percentageComplete);
+            animStateControl.leaningRightAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningRightAnim = false;
+                movingRight_LM = false;
+
+            }
+
+            if (playerPOS.transform.position == rightTarget.transform.position)
+            {
+
+                movingRight_LM = false;
+                animStateControl.leaningRightAnim = false;
+                elapsedTime = 0;
+
+            }
+
+        }
+
 
 
 
@@ -226,7 +280,11 @@ public class gameManager : MonoBehaviour
         movingRight_MR = true;
     }
 
-  
+    public void moveRight_LM()
+    {
+        movingRight_LM = true;
+    }
+
 
 
 

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Left_Arrow_ML : MonoBehaviour
+public class Right_Arrow_L_M : MonoBehaviour
 {
     public Rigidbody playerRb;
     public animStateController animStateControl;
+
 
     //floats for calc of hit accuracy
     public float earlyHitPos = 1.9f;
@@ -20,13 +21,16 @@ public class Left_Arrow_ML : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Arrow Trigger"))
         {
-            //Debug.Log(collision.gameObject.name);
-            gameObject.tag = "Left Arrow";
+            gameObject.tag = "Right Arrow";
 
+
+            // move right anim here
+
+            Debug.Log(collision.gameObject.name);
 
         }
 
-        if (collision.gameObject.CompareTag("Left Trigger"))
+        if (collision.gameObject.CompareTag("Right Trigger"))
         {
             if (dragging.touchSide == "Left")
             {
@@ -48,7 +52,7 @@ public class Left_Arrow_ML : MonoBehaviour
             //Debug.Log("Early Good hit < " + (centreHitPos + (earlyHitRange * goodPercent / 100)));
             //Debug.Log("Late Good hit > " + (centreHitPos + (lateHitRange * goodPercent / 100)));
 
-            //Debug.Log("HitPosZ: " + hitPosZ);
+            //Debug.Log("HitPosX: " + hitPosZ);
 
             if (hitPosZ < (centreHitPos + (earlyHitRange * perPercent / 100)) &&
                 hitPosZ > (centreHitPos + (lateHitRange * perPercent / 100)))
@@ -70,38 +74,35 @@ public class Left_Arrow_ML : MonoBehaviour
             }
 
 
-            
 
-            //call move left here
 
-            gameManager.instance.moveLeft_ML();
+            gameManager.instance.moveRight_LM();
+
 
 
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);
 
+
+
         }
 
-        if (collision.gameObject.CompareTag("Right Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Down Trigger"))
+        if (collision.gameObject.CompareTag("Left Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Down Trigger"))
         {
-            //put in a destroy animation and end combo trigger here
             gameManager.instance.WrongDirection();
+            gameManager.instance.moveRight_LM();
+            //put in a destroy animation and end combo trigger here
             gameObject.SetActive(false);
-            gameManager.instance.moveLeft_ML();
-
         }
 
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
-            //Have a missed arrow and end combo trigger here
-            //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
-            animStateControl.wobbleAnim = true;
             gameManager.instance.NoteMissed();
-            gameManager.instance.moveLeft_ML();
+            // playerRb.transform.Translate(3.0f, 0f, 0f);
+            animStateControl.wobbleAnim = true;
+            gameManager.instance.moveRight_LM();
+            //Have a missed arrow and end combo trigger here
             gameObject.SetActive(false);
-
         }
     }
-
-
 }
