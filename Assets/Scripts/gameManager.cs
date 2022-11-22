@@ -151,6 +151,7 @@ public class gameManager : MonoBehaviour
             if (elapsedTime >= 0.6f)
             {
                 animStateControl.leaningLeftAnim = false;
+                
 
             }
 
@@ -180,6 +181,7 @@ public class gameManager : MonoBehaviour
             if (elapsedTime >= 0.6f)
             {
                 animStateControl.leaningLeftAnim = false;
+                
 
             }
 
@@ -211,6 +213,7 @@ public class gameManager : MonoBehaviour
             if (elapsedTime >= 0.6f)
             {
                 animStateControl.leaningRightAnim = false;
+                
 
             }
 
@@ -240,11 +243,11 @@ public class gameManager : MonoBehaviour
             if (elapsedTime >= 0.6f)
             {
                 animStateControl.leaningRightAnim = false;
-                movingRight_LM = false;
+                
 
             }
 
-            if (playerPOS.transform.position == rightTarget.transform.position)
+            if (playerPOS.transform.position == middleTarget.transform.position)
             {
 
                 movingRight_LM = false;
