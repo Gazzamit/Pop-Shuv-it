@@ -841,102 +841,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Arrow Direction Triggers
       objectReference: {fileID: 0}
-    - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Left_Right Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683253736352, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Right Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683253736355, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683298062876, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Left_Left_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683298062877, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Left Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683580577510, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Right_Right_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298683580577511, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Right Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684138632428, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Left_Up_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684138632429, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Up Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684324982806, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Right_Down_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684324982807, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Down Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684836238040, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Left_Down_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684836238041, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Down Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Right_Left_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684866990728, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Left Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298684866990731, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298685274509006, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_Name
-      value: Right_Up_Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298685274509007, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_TagString
-      value: Up Trigger
-      objectReference: {fileID: 0}
     - target: {fileID: 3973875591173848251, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1291,6 +1195,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1995607843, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 1995607843, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1437,10 +1349,6 @@ PrefabInstance:
     - target: {fileID: 5747144851880689626, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521781464007706372, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
-      propertyPath: m_Volume
-      value: 0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

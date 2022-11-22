@@ -37,6 +37,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 4047118300494720135}
     m_Modifications:
     - target: {fileID: 1997633114825888514, guid: e23d408480fb949ddb3d94dee80d9c3d, type: 3}
@@ -88,6 +89,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e23d408480fb949ddb3d94dee80d9c3d, type: 3}
 --- !u!4 &4047118300006418034 stripped
 Transform:
@@ -112,7 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDragging: 0
-  beatTempo: 0
   arrows:
     serializedVersion: 2
     m_Bits: 64

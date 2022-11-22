@@ -88,6 +88,39 @@ MonoBehaviour:
   multiplierThreshold: 040000000800000010000000
   fadeGroup: {fileID: 0}
   fadeInDuration: 1
+  lerpMovingLeft_ML:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.036130067
+      outSlope: 0.036130067
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.21629104
+    - serializedVersion: 3
+      time: 0.9762635
+      value: 0.84054524
+      inSlope: 2.6853228
+      outSlope: 2.6853228
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.035438035
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 6.7177095
+      outSlope: 6.7177095
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1301433851685156098
 GameObject:
   m_ObjectHideFlags: 0

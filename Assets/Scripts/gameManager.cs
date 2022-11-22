@@ -18,16 +18,7 @@ public class gameManager : MonoBehaviour
     private float elapsedTime;
     public bool movingLeft_ML = false;
     public bool movingRight_MR = false;
-
-
-
-
-
-
-
     public static gameManager instance;
-
-
     public int currentScore;
     public int scorePerNote = 100;
     public int scorePerGoodNote = 125;
@@ -57,6 +48,8 @@ public class gameManager : MonoBehaviour
 
     public CanvasGroup fadeGroup; //for fade-in using fade alpha
     public float fadeInDuration = 1f; // fade-in time
+
+    public AnimationCurve lerpMovingLeft_ML;
 
     // Start is called before the first frame update
     void Start()
@@ -144,14 +137,14 @@ public class gameManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / leftRightSpeed;
 
-
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, lerpMovingLeft_ML.Evaluate(percentageComplete));
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
-
+            
             if (playerPOS.transform.position == leftTarget.transform.position)
             {
 
                 movingLeft_ML = false;
-
+                elapsedTime = 0;
             }
 
         }
@@ -167,10 +160,12 @@ public class gameManager : MonoBehaviour
 
             playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
 
+
             if (playerPOS.transform.position == rightTarget.transform.position)
             {
 
                 movingRight_MR = false;
+                elapsedTime = 0;
 
             }
 

@@ -898,14 +898,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Arrow Direction Triggers
       objectReference: {fileID: 0}
-    - target: {fileID: 3459298684138632428, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459298685274509006, guid: 46605004830ce495bb9807336db24aff, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 3973875591173848251, guid: 46605004830ce495bb9807336db24aff, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1023,10 +1015,6 @@ PrefabInstance:
     - target: {fileID: 1583782890066400196, guid: e00a2a58406e04782bf726299ea559b8, type: 3}
       propertyPath: m_Name
       value: GameObject (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583782890066400196, guid: e00a2a58406e04782bf726299ea559b8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2982830520114579599, guid: e00a2a58406e04782bf726299ea559b8, type: 3}
       propertyPath: m_RootOrder
@@ -1320,30 +1308,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 4900246807409301706, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 5175667630382659197, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_Convex
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6413425789495308139, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 6413425789495308139, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: animStateControl
-      value: 
-      objectReference: {fileID: 1387062144}
-    - target: {fileID: 6413425790087646262, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 6413425790087646262, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: animStateControl
-      value: 
-      objectReference: {fileID: 1387062144}
     - target: {fileID: 6637449116968925407, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1360,10 +1324,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: _Moving Level Objects
       objectReference: {fileID: 0}
-    - target: {fileID: 7705351832523032853, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7891303449005519120, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1372,10 +1332,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 8800380865886687626, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 23.66
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
@@ -1433,10 +1389,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5747144851880689626, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521781464007706372, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
-      propertyPath: m_Volume
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
