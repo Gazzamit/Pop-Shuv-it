@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, anim5050, wobbleAnim;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, anim5050, wobbleAnim, leaningLeftAnim;
     Animator animator;
 
 
@@ -27,6 +27,8 @@ public class animStateController : MonoBehaviour
         indy();
         grind5050();
         wobble();
+        leaningLeft();
+
 
     }
 
@@ -171,6 +173,39 @@ public class animStateController : MonoBehaviour
         wobbleAnim = false;
 
     }
+
+
+
+    public void leaningLeft()
+    {
+        if (leaningLeftAnim == true)
+        {
+
+            animator.SetBool("LeaningLeft?", true);
+
+
+
+        }
+
+        if (leaningLeftAnim == !true)
+        {
+
+            animator.SetBool("LeaningLeft?", false);
+
+
+        }
+
+    }
+
+    public void leaningLeftEnd()
+    {
+        leaningLeftAnim = false;
+
+    }
+
+
+
+
 
 
 }

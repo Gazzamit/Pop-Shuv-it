@@ -14,9 +14,11 @@ public class gameManager : MonoBehaviour
     public Transform playerPOS;
     public Transform leftTarget;
     public Transform rightTarget;
+    public Transform middleTarget;
     public float leftRightSpeed;
     private float elapsedTime;
     public bool movingLeft_ML = false;
+    public bool movingLeft_RM = false;
     public bool movingRight_MR = false;
     public static gameManager instance;
     public int currentScore;
@@ -50,6 +52,8 @@ public class gameManager : MonoBehaviour
     public float fadeInDuration = 1f; // fade-in time
 
     public AnimationCurve lerpMovingLeft_ML;
+    public AnimationCurve lerpMovingLeft_RM;
+    public AnimationCurve lerpMovingRight_MR;
 
     // Start is called before the first frame update
     void Start()
@@ -137,17 +141,43 @@ public class gameManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / leftRightSpeed;
 
-            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, lerpMovingLeft_ML.Evaluate(percentageComplete));
-            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
-            
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, lerpMovingLeft_ML.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
+            animStateControl.leaningLeftAnim = true;
+
             if (playerPOS.transform.position == leftTarget.transform.position)
             {
 
+                animStateControl.leaningLeftAnim = false;
                 movingLeft_ML = false;
+                
                 elapsedTime = 0;
             }
 
         }
+
+
+        //move from right to middle
+        if (movingLeft_RM == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, lerpMovingLeft_RM.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, percentageComplete);
+            animStateControl.leaningLeftAnim = true;
+
+            if (playerPOS.transform.position == middleTarget.transform.position)
+            {
+
+                movingLeft_RM = false;
+                animStateControl.leaningLeftAnim = false;
+                elapsedTime = 0;
+            }
+
+        }
+
 
 
         //move from middle to right
@@ -157,8 +187,9 @@ public class gameManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / leftRightSpeed;
 
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, lerpMovingRight_MR.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
 
-            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
 
 
             if (playerPOS.transform.position == rightTarget.transform.position)
@@ -173,59 +204,29 @@ public class gameManager : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
     }
 
 
 
 
-        public void moveLeft_ML()
+    public void moveLeft_ML()
 
     {
-
-
         movingLeft_ML = true;
-
-
     }
 
+    public void moveLeft_RM()
 
+    {
+        movingLeft_RM = true;
+    }
 
     public void moveRight_MR()
     {
-
         movingRight_MR = true;
-
-
     }
 
-    public void flipTrick()
-    {
-
-        //animStateControl.kickflipAnim = true;
-
-    }
-
-
-    public void grabTrick()
-    {
-
-        //add grab trick animation here
-
-    }
-
-    public void grindTrick()
-    {
-
-        //add grind trick animation here
-
-    }
+  
 
 
 

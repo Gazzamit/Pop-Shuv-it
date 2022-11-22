@@ -338,6 +338,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
+--- !u!4 &1949406417 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7083775843756907587, guid: 97f571ceac0f4e740a40e03f1b6fd0b0, type: 3}
+  m_PrefabInstance: {fileID: 1949406416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2029109518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4315695566936743473, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
@@ -410,6 +415,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941814268}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: middleTarget
+      value: 
+      objectReference: {fileID: 1949406417}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: perfectsText
       value: 
       objectReference: {fileID: 955023085914838680}
@@ -421,6 +430,10 @@ PrefabInstance:
       propertyPath: finalScoreText
       value: 
       objectReference: {fileID: 955023085914838678}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: leftRightSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: multiplierText
       value: 
@@ -441,6 +454,46 @@ PrefabInstance:
       propertyPath: highScoreLocation
       value: 
       objectReference: {fileID: 1258446689}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingLeft_RM.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingRight_MR.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingLeft_RM.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingLeft_RM.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingRight_MR.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingRight_MR.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingLeft_RM.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingLeft_RM.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingRight_MR.m_Curve.Array.data[1].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 424144295142780244, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
+      propertyPath: lerpMovingRight_MR.m_Curve.Array.data[1].outSlope
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1301433851685156098, guid: d761289471cd04a189c6dc4da5d134db, type: 3}
       propertyPath: m_Name
       value: _Game Manager
@@ -1263,6 +1316,26 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 5463784622898439627, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 5463784622898439627, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: lateHitPos
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463784622898439627, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: earlyHitPos
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463784622898439627, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: centreHitPos
+      value: -0.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5463784622898439627, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 6637449116968925407, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1279,6 +1352,18 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 7408035672986223234, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408035672986223234, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408035672986223234, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 36.83
+      objectReference: {fileID: 0}
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
       value: _Moving Level Objects
