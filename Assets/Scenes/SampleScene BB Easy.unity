@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1280,14 +1280,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: playerRb
-      value: 
-      objectReference: {fileID: 1166583960}
-    - target: {fileID: 2081853704, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: animStateControl
-      value: 
-      objectReference: {fileID: 1387062144}
     - target: {fileID: 480211527795967474, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1340,11 +1332,43 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1074667795647821398, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 1074667795647821398, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
     - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
       objectReference: {fileID: 1166583960}
     - target: {fileID: 1074667796326069145, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
+    - target: {fileID: 1379755001825300512, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 1379755001825300512, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
+    - target: {fileID: 4119031550127934053, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 4119031550127934053, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: animStateControl
+      value: 
+      objectReference: {fileID: 1387062144}
+    - target: {fileID: 4119031551782191974, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: playerRb
+      value: 
+      objectReference: {fileID: 1166583960}
+    - target: {fileID: 4119031551782191974, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
@@ -1364,14 +1388,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 5660609847760772692, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 5660609847760772692, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 93.8
-      objectReference: {fileID: 0}
     - target: {fileID: 6249948414385871481, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1408,14 +1424,6 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
-    - target: {fileID: 8172603313085973551, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8593106671789833910, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 90
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}

@@ -73,7 +73,10 @@ public class downArrowTrigger : MonoBehaviour
 
             // grind anim here
             animStateControl.anim5050 = true;
-            //playerRb.transform.Rotate(0f, 90f, 0f);
+            animStateControl.ollieAnim = true;
+
+
+
 
         }
 
