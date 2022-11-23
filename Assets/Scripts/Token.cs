@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Token : MonoBehaviour
 {
-    private void OnTriggerEnter (Collider collision)
+    //For collecting tokens on collision with player
+    /*    private void OnTriggerEnter (Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -13,6 +14,7 @@ public class Token : MonoBehaviour
             SaveManager.Instance.Save();
             Destroy(gameObject);
         }
-    }
+    }*/
+
     
 }

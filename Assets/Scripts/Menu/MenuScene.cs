@@ -9,6 +9,8 @@ using TMPro;
 public class MenuScene : MonoBehaviour
 {
 
+    public bool BypassThisScene;
+    public string SkipToThisScene;
     public CanvasGroup fadeGroup; //assign in inspector
 
     private float fadeInSpeed = 1f; //think 1/fadeInSpeed to get time
@@ -60,6 +62,8 @@ public class MenuScene : MonoBehaviour
 
     private void Start()
     {
+        if(BypassThisScene) SceneManager.LoadScene(SkipToThisScene);
+        
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         //SaveManager.Instance.state.token = 100; 
 

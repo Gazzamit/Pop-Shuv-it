@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Preloader : MonoBehaviour
 {
     public CanvasGroup fadeGroup; //assign in inspector
+    public bool BypassThisScene;
     public float minLogoTime = 3.0f; // min time for preload scene dispolay of logo
     public float gameLoadTime;
     public float fadeInTime = 2f;
@@ -13,7 +14,8 @@ public class Preloader : MonoBehaviour
 
     private void Start() 
     {
-
+        if (BypassThisScene) SceneManager.LoadScene("Menu");
+        
         fadeGroup.alpha = 1; // white screen to start
         
         //preload the game here

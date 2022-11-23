@@ -64,12 +64,30 @@ MonoBehaviour:
   clickToRestartLevelClicked: 0
   canvasButtonClicked: 0
   HighScoresButtonClicked: 0
+  unlockNextLevelNow: 0
+  livesLeft: 4
+  LooseLifeAtCount: 01000000020000000300000004000000
+  starTargetScores: fa0000005e010000c2010000
   music: {fileID: 0}
   theBS: {fileID: 0}
   animStateControl: {fileID: 0}
   playerPOS: {fileID: 0}
   leftTarget: {fileID: 0}
   leftRightSpeed: 0
+  player: {fileID: 0}
+  playerBody: {fileID: 0}
+  ArrowsParent: {fileID: 0}
+  resultsScreen: {fileID: 0}
+  pauseScreen: {fileID: 0}
+  ScoresScreenInsert: {fileID: 0}
+  highScoresScreen: {fileID: 0}
+  failedLevelScreen: {fileID: 0}
+  EnterNameScreen: {fileID: 0}
+  highScoreLocation: {fileID: 0}
+  currentMultiplier: 0
+  multiplierTracker: 0
+  multiplierThreshold: 040000000800000010000000
+  arrowMissedCounter: 0
   currentScore: 0
   scorePerNote: 100
   scorePerGoodNote: 125
@@ -79,44 +97,30 @@ MonoBehaviour:
   goodHits: 0
   perfectHits: 0
   missedHits: 0
-  getHighScores: 0000000000000000000000000000000000000000
-  getHighScoreNames:
-  - 
-  - 
-  - 
-  - 
-  - 
   newHighScoreName: 
-  highScoreLocation: {fileID: 0}
+  scoreText: {fileID: 0}
+  multiplierText: {fileID: 0}
+  enterNameInputField: {fileID: 0}
   percentHitText: {fileID: 0}
   normalsText: {fileID: 0}
   goodsText: {fileID: 0}
   perfectsText: {fileID: 0}
   missesText: {fileID: 0}
   finalScoreText: {fileID: 0}
-  ArrowsParent: {fileID: 0}
-  arrowMissedCounter: 0
-  resultsScreen: {fileID: 0}
-  pauseScreen: {fileID: 0}
-  ScoresScreenInsert: {fileID: 0}
-  highScoresScreen: {fileID: 0}
-  failedLevelScreen: {fileID: 0}
-  EnterNameScreen: {fileID: 0}
-  scoreText: {fileID: 0}
-  multiplierText: {fileID: 0}
-  enterNameInputField: {fileID: 0}
+  oneOfThreeStars: {fileID: 0}
+  twoOfThreeStarsText: {fileID: 0}
+  levelClearedText: {fileID: 0}
+  starIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   livesIcons:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  LooseLifeAtCount: 01000000020000000300000004000000
-  livesLeft: 4
-  player: {fileID: 0}
-  playerBody: {fileID: 0}
-  currentMultiplier: 0
-  multiplierTracker: 0
-  multiplierThreshold: 040000000800000010000000
   fadeGroup: {fileID: 0}
   fadeInDuration: 1
 --- !u!1 &1301433851685156098

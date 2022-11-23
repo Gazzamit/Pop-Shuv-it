@@ -708,6 +708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9787cdc5ccb704a58a4176186a0e83ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RESET_SAVE: 0
 --- !u!1 &1085296926
 GameObject:
   m_ObjectHideFlags: 0
@@ -753,6 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeGroup: {fileID: 909084790}
+  BypassThisScene: 1
   minLogoTime: 0.5
   gameLoadTime: 0
   fadeInTime: 0.5

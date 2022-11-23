@@ -4,23 +4,36 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
+    public bool RESET_SAVE = false;
+
     public static SaveManager Instance { set; get; } //access from anywhere in the
     public SaveState state; //this will be converted to/from a string
 
     private void Awake()
     {
         //TEMP for reset state
-        //ResetSave();
 
+        if (RESET_SAVE)
+        {
+            ResetSave();
+            RESET_SAVE = false;
+            Debug.Log("--------------");
+            Debug.Log("SAVE WAS RESET");
+            Debug.Log("--------------");
+        }
+        else
+        {
+            Debug.Log ("Save not reset");
+        }
         DontDestroyOnLoad(gameObject);
         Instance = this;
-        Load(); 
+        Load();
 
         //test state
         //Debug.Log(IsSkinOwned(0));
         //UnlockSkin(0);
         //Debug.Log(IsSkinOwned(0));
-        
+
         //to save/load data
         //SaveManager.Instance.Save()
         //SaveManager.Instance.state.yourVariableToSave = x; 
@@ -102,14 +115,14 @@ public class SaveManager : MonoBehaviour
     public void UnlockSkin(int index)
     {
         //toggle on the bit at index (bit operator)
-        state.skinOwned |= 1 <<index;
+        state.skinOwned |= 1 << index;
     }
     public void UnlockRoute(int index)
     {
         //toggle on the bit at index (bit operator)
-        state.routeOwned |= 1 <<index;
+        state.routeOwned |= 1 << index;
     }
-    
+
     //Complete the level
     public void CompleteLevel(int index)
     {
