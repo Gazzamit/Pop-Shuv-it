@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, wobbleAnim, leaningLeftAnim, leaningRightAnim;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, wobbleAnim, wobbleAvoidRailAnim, leaningLeftAnim, leaningRightAnim;
     Animator animator;
 
 
@@ -30,6 +30,8 @@ public class animStateController : MonoBehaviour
         leaningLeft();
         leaningRight();
         indyRamp();
+        wobbleAvoidRail();
+
 
 
 
@@ -204,6 +206,30 @@ public class animStateController : MonoBehaviour
     public void wobbleEnd()
     {
         wobbleAnim = false;
+
+    }
+
+
+    public void wobbleAvoidRail()
+    {
+        if (wobbleAvoidRailAnim == true)
+        {
+            animator.SetBool("WobbleAvoidRail?", true);
+
+        }
+
+        if (wobbleAvoidRailAnim == !true)
+        {
+            animator.SetBool("WobbleAvoidRail?", false);
+
+        }
+
+
+    }
+
+    public void wobbleAvoidRailEnd()
+    {
+        wobbleAvoidRailAnim = false;
 
     }
 

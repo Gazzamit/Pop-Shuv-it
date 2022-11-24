@@ -91,7 +91,7 @@ public class downArrowTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             gameManager.instance.NoteMissed();
-            animStateControl.wobbleAnim = true;
+            animStateControl.wobbleAvoidRailAnim = true;
 
             //Have a missed arrow and end combo trigger here
             gameObject.SetActive(false);
