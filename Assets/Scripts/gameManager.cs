@@ -57,7 +57,6 @@ public class gameManager : MonoBehaviour
     public bool movingLeft_RM = false;
     public bool movingRight_MR = false;
     public bool movingRight_LM = false;
-    public static gameManager instance;
 
     public int currentScore;
     public int scorePerNote = 100;
