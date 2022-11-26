@@ -40,9 +40,12 @@ public class dragging : MonoBehaviour
             {
                 Ray ray = Camera.main.ScreenPointToRay(pos);
                 RaycastHit hit;
+                //Debug.DrawRay(ray.origin, ray.direction * 1000, Color.red, duration: 50f);
 
                 // dragging has begun
                 if (Physics.Raycast(ray, out hit, 999f, arrows))
+
+                //Debug.Log("Collider Hit: " + hit.collider.name);
                 {
 
                     // Add New Tricks / Arrow Tags here with || 
@@ -52,6 +55,8 @@ public class dragging : MonoBehaviour
                         arrowRigidbody = hit.rigidbody;
 
                         arrowRigidbody.isKinematic = false;
+
+                        Debug.Log("Arrow Collider Hit: " + hit.collider.name);
 
                         hitPositionZ = hit.collider.transform.position.z;
                         //Debug.Log("Collider Position: " +  hit.collider.transform.position);

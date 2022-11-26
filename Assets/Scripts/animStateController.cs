@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, anim5050, wobbleAnim;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, wobbleAnim, wobbleAvoidRailAnim, leaningLeftAnim, leaningRightAnim;
     Animator animator;
 
 
@@ -27,6 +27,13 @@ public class animStateController : MonoBehaviour
         indy();
         grind5050();
         wobble();
+        leaningLeft();
+        leaningRight();
+        indyRamp();
+        wobbleAvoidRail();
+
+
+
 
     }
 
@@ -124,6 +131,36 @@ public class animStateController : MonoBehaviour
     }
 
 
+    public void indyRamp()
+    {
+        if (indyRampAnim == true)
+        {
+            animator.SetBool("IndyRamp?", true);
+
+        }
+
+        if (indyRampAnim == !true)
+        {
+            animator.SetBool("IndyRamp?", false);
+
+        }
+
+
+
+    }
+
+    public void indyRampEnd()
+    {
+        indyRampAnim = false;
+
+    }
+
+
+
+
+
+
+
     public void grind5050()
     {
         if (anim5050 == true)
@@ -171,6 +208,91 @@ public class animStateController : MonoBehaviour
         wobbleAnim = false;
 
     }
+
+
+    public void wobbleAvoidRail()
+    {
+        if (wobbleAvoidRailAnim == true)
+        {
+            animator.SetBool("WobbleAvoidRail?", true);
+
+        }
+
+        if (wobbleAvoidRailAnim == !true)
+        {
+            animator.SetBool("WobbleAvoidRail?", false);
+
+        }
+
+
+    }
+
+    public void wobbleAvoidRailEnd()
+    {
+        wobbleAvoidRailAnim = false;
+
+    }
+
+
+
+    public void leaningLeft()
+    {
+        if (leaningLeftAnim == true)
+        {
+
+            animator.SetBool("LeaningLeft?", true);
+
+
+
+        }
+
+        if (leaningLeftAnim == !true)
+        {
+
+            animator.SetBool("LeaningLeft?", false);
+
+
+        }
+
+    }
+
+    public void leaningLeftEnd()
+    {
+        leaningLeftAnim = false;
+
+    }
+
+
+
+    public void leaningRight()
+    {
+        if (leaningRightAnim == true)
+        {
+
+            animator.SetBool("LeaningRight?", true);
+
+
+
+        }
+
+        if (leaningRightAnim == !true)
+        {
+
+            animator.SetBool("LeaningRight?", false);
+
+
+        }
+
+    }
+
+    public void leaningRightEnd()
+    {
+        leaningRightAnim = false;
+
+    }
+
+
+
 
 
 }

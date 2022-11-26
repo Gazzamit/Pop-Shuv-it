@@ -73,7 +73,10 @@ public class downArrowTrigger : MonoBehaviour
 
             // grind anim here
             animStateControl.anim5050 = true;
-            //playerRb.transform.Rotate(0f, 90f, 0f);
+            animStateControl.ollieAnim = true;
+
+
+
 
         }
 
@@ -90,7 +93,7 @@ public class downArrowTrigger : MonoBehaviour
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
             gameManager.instance.NoteMissed();
-            animStateControl.wobbleAnim = true;
+            animStateControl.wobbleAvoidRailAnim = true;
 
             //Have a missed arrow and end combo trigger here
             gameObject.SetActive(false);

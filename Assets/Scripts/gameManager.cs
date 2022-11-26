@@ -30,9 +30,12 @@ public class gameManager : MonoBehaviour
     public animStateController animStateControl;
     public Transform playerPOS;
     public Transform leftTarget;
+    public Transform rightTarget;
+    public Transform middleTarget;
     public float leftRightSpeed;
     private float elapsedTime;
-    private bool movingLeft = false;
+
+    //private bool movingLeft = false;
 
     public GameObject player;
     public GameObject playerBody;
@@ -49,6 +52,13 @@ public class gameManager : MonoBehaviour
     public int multiplierTracker;
     public int[] multiplierThreshold;
     public int arrowMissedCounter;
+
+    public bool movingLeft_ML = false;
+    public bool movingLeft_RM = false;
+    public bool movingRight_MR = false;
+    public bool movingRight_LM = false;
+    public static gameManager instance;
+
     public int currentScore;
     public int scorePerNote = 100;
     public int scorePerGoodNote = 125;
@@ -74,6 +84,11 @@ public class gameManager : MonoBehaviour
 
     public CanvasGroup fadeGroup; //for fade-in using fade alpha
     public float fadeInDuration = 1f; // fade-in time
+
+    public AnimationCurve lerpMovingLeft_ML;
+    public AnimationCurve lerpMovingLeft_RM;
+    public AnimationCurve lerpMovingRight_MR;
+    public AnimationCurve lerpMovingRight_LM;
 
 
     // Start is called before the first frame update
@@ -446,14 +461,35 @@ public class gameManager : MonoBehaviour
         }
 
 
-        if (movingLeft == true)
+
+
+
+        //moving left from middle to left
+        if (movingLeft_ML == true)
         {
 
             elapsedTime += Time.deltaTime;
             float percentageComplete = elapsedTime / leftRightSpeed;
 
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, lerpMovingLeft_ML.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
+            animStateControl.leaningLeftAnim = true;
 
-            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, leftTarget.transform.position, percentageComplete);
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningLeftAnim = false;
+                
+
+            }
+
+            if (playerPOS.transform.position == leftTarget.transform.position)
+            {
+
+                animStateControl.leaningLeftAnim = false;
+                movingLeft_ML = false;
+                
+                elapsedTime = 0;
+            }
 
         }
 
@@ -461,52 +497,129 @@ public class gameManager : MonoBehaviour
         //reset canvas clicked
         canvasButtonClicked = false;
 
+        //moving left from right to middle
+        if (movingLeft_RM == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, lerpMovingLeft_RM.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, percentageComplete);
+            animStateControl.leaningLeftAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningLeftAnim = false;
+                
+
+            }
+
+
+
+            if (playerPOS.transform.position == middleTarget.transform.position)
+            {
+
+                movingLeft_RM = false;
+                animStateControl.leaningLeftAnim = false;
+                elapsedTime = 0;
+            }
+
+        }
+
+
+
+        //moving right from middle to right
+        if (movingRight_MR == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, lerpMovingRight_MR.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, rightTarget.transform.position, percentageComplete);
+            animStateControl.leaningRightAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningRightAnim = false;
+                
+
+            }
+
+            if (playerPOS.transform.position == rightTarget.transform.position)
+            {
+
+                movingRight_MR = false;
+                animStateControl.leaningRightAnim = false;
+                elapsedTime = 0;
+
+            }
+
+        }
+
+
+        //moving right from left to middle
+        if (movingRight_LM == true)
+        {
+
+            elapsedTime += Time.deltaTime;
+            float percentageComplete = elapsedTime / leftRightSpeed;
+
+            playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, lerpMovingRight_LM.Evaluate(percentageComplete));
+            //playerPOS.transform.position = Vector3.Lerp(playerPOS.transform.position, middleTarget.transform.position, percentageComplete);
+            animStateControl.leaningRightAnim = true;
+
+            if (elapsedTime >= 0.6f)
+            {
+                animStateControl.leaningRightAnim = false;
+                
+
+            }
+
+            if (playerPOS.transform.position == middleTarget.transform.position)
+            {
+
+                movingRight_LM = false;
+                animStateControl.leaningRightAnim = false;
+                elapsedTime = 0;
+
+            }
+
+        }
+
+
+
+
     }
 
 
     /////////////////////////////
     //Arrow Hits scoring system//
 
-    public void moveLeft()
+
+    public void moveLeft_ML()
 
     {
-
-        movingLeft = true;
-
-
+        movingLeft_ML = true;
     }
 
+    public void moveLeft_RM()
 
-
-    public void moveRight()
     {
-
-        //add move right rb transform
-
-
+        movingLeft_RM = true;
     }
 
-    public void flipTrick()
+    public void moveRight_MR()
     {
-
-        //animStateControl.kickflipAnim = true;
-
+        movingRight_MR = true;
     }
 
-
-    public void grabTrick()
+    public void moveRight_LM()
     {
-
-        //add grab trick animation here
-
+        movingRight_LM = true;
     }
 
-    public void grindTrick()
-    {
-
-        //add grind trick animation here
-
-    }
 
 
     public void NoteHit()

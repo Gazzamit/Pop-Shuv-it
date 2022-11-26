@@ -75,7 +75,6 @@ public class leftArrowTrigger : MonoBehaviour
 
             //call move left here
 
-            gameManager.instance.moveLeft();
             
 
             // put in a point scoring animation and destroy object here
