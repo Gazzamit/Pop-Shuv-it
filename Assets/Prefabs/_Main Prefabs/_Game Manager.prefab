@@ -64,16 +64,24 @@ MonoBehaviour:
   clickToRestartLevelClicked: 0
   canvasButtonClicked: 0
   HighScoresButtonClicked: 0
-  unlockNextLevelNow: 0
+  SetUnlockNextLevel: 0
+  SetOneStarUnlocked: 0
+  SetTwoStarsUnlocked: 0
+  SetThreeStarsUnlocked: 0
   livesLeft: 4
   LooseLifeAtCount: 01000000020000000300000004000000
   starTargetScores: fa0000005e010000c2010000
+  starcounter: 0
+  numtokens: 0
+  starsPreviouslyAchieved: 0
   music: {fileID: 0}
   theBS: {fileID: 0}
   animStateControl: {fileID: 0}
   playerPOS: {fileID: 0}
   leftTarget: {fileID: 0}
-  leftRightSpeed: 0
+  rightTarget: {fileID: 0}
+  middleTarget: {fileID: 0}
+  leftRightSpeed: 1.5
   player: {fileID: 0}
   playerBody: {fileID: 0}
   ArrowsParent: {fileID: 0}
@@ -88,6 +96,10 @@ MonoBehaviour:
   multiplierTracker: 0
   multiplierThreshold: 040000000800000010000000
   arrowMissedCounter: 0
+  movingLeft_ML: 0
+  movingLeft_RM: 0
+  movingRight_MR: 0
+  movingRight_LM: 0
   currentScore: 0
   scorePerNote: 100
   scorePerGoodNote: 125
@@ -107,9 +119,11 @@ MonoBehaviour:
   perfectsText: {fileID: 0}
   missesText: {fileID: 0}
   finalScoreText: {fileID: 0}
+  noStarsText: {fileID: 0}
   oneOfThreeStars: {fileID: 0}
   twoOfThreeStarsText: {fileID: 0}
   levelClearedText: {fileID: 0}
+  PlusFiveShopTokens: {fileID: 0}
   starIcons:
   - {fileID: 0}
   - {fileID: 0}
@@ -123,6 +137,84 @@ MonoBehaviour:
   - {fileID: 0}
   fadeGroup: {fileID: 0}
   fadeInDuration: 1
+  lerpMovingLeft_ML:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lerpMovingLeft_RM:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lerpMovingRight_MR:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lerpMovingRight_LM:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1301433851685156098
 GameObject:
   m_ObjectHideFlags: 0

@@ -928,8 +928,12 @@ MonoBehaviour:
   kickflipAnim: 0
   ollieAnim: 0
   indyAnim: 0
+  indyRampAnim: 0
   anim5050: 0
   wobbleAnim: 0
+  wobbleAvoidRailAnim: 0
+  leaningLeftAnim: 0
+  leaningRightAnim: 0
 --- !u!4 &6419158233379353138 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4917711e73f534c5a97ac8e297b659ba, type: 3}
