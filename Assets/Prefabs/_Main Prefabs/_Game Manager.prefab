@@ -70,7 +70,7 @@ MonoBehaviour:
   SetThreeStarsUnlocked: 0
   livesLeft: 4
   LooseLifeAtCount: 01000000020000000300000004000000
-  starTargetScores: fa0000005e010000c2010000
+  starTargetScores: c80000009001000058020000
   starcounter: 0
   numtokens: 0
   starsPreviouslyAchieved: 0
@@ -139,7 +139,25 @@ MonoBehaviour:
   fadeInDuration: 1
   lerpMovingLeft_ML:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

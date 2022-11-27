@@ -969,6 +969,7 @@ public class gameManager : MonoBehaviour
     public void SetPlayerSkin()
     {
         int index = SaveManager.Instance.state.activeSkinTShirt; //Get saved T-shirt colour index
+        Debug.Log("T-Shirt ID: " + index);
         Manager.Instance.playerMaterials = playerBody.GetComponent<SkinnedMeshRenderer>().materials; //get current player materials
         Manager.Instance.playerMaterials[2].color = Manager.Instance.playerTshirtColorOptions[index]; //set colour of material 2 to colour index of the colours set up in inspector
     }

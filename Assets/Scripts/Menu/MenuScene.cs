@@ -61,9 +61,7 @@ public class MenuScene : MonoBehaviour
     }
 
     private void Start()
-    {
-        if(BypassThisScene) SceneManager.LoadScene(SkipToThisScene);
-        
+    {   
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
         //SaveManager.Instance.state.token = 100; 
 
@@ -95,6 +93,9 @@ public class MenuScene : MonoBehaviour
         // Make buttons bigger for the selected items above
         skinPanel.GetChild(SaveManager.Instance.state.activeSkinTShirt).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
         routePanel.GetChild(SaveManager.Instance.state.activeRoute).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
+        
+        //Bypass if set in inspector
+        if(BypassThisScene) SceneManager.LoadScene(SkipToThisScene);
     }
 
     private void Update() 
