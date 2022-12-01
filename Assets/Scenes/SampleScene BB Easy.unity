@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 99954980}
-  m_IndirectSpecularColor: {r: 2.2150614, g: 0.42258793, b: 0.03022042, a: 1}
+  m_IndirectSpecularColor: {r: 2.2150729, g: 0.422588, b: 0.03022654, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1348,6 +1348,10 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 1194683840271978210, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1379755001825300512, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1356,6 +1360,26 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 2057784206499122967, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2092232671243714464, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176495976885110723, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203531557119129054, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4098105131976070454, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4119031550127934053, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: playerRb
       value: 
@@ -1412,6 +1436,10 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 7537246225982792171, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7611307892234261402, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
       propertyPath: m_Name
       value: _Moving Level Objects
@@ -1424,6 +1452,18 @@ PrefabInstance:
       propertyPath: animStateControl
       value: 
       objectReference: {fileID: 1387062144}
+    - target: {fileID: 8058250212694523235, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644725993423843433, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8698057843679300662, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: df4e9313e224c4e06816f7e52a51ae99, type: 3}
