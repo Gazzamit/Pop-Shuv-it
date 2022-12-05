@@ -968,6 +968,7 @@ public class gameManager : MonoBehaviour
     //set skin for player//
     public void SetPlayerSkin()
     {
+        //the array playermaterials is set here and works with donotdestroyonload
         int index = SaveManager.Instance.state.activeSkinTShirt; //Get saved T-shirt colour index
         Debug.Log("T-Shirt ID: " + index);
         Manager.Instance.playerMaterials = playerBody.GetComponent<SkinnedMeshRenderer>().materials; //get current player materials

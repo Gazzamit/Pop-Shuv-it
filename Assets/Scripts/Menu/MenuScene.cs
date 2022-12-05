@@ -55,9 +55,19 @@ public class MenuScene : MonoBehaviour
     public GameObject playerBodyInMenu;
     private Material[] signMaterials;
 
+    //Shop Tshirt select system
+    public static Vector3 newPos;
+    public static bool selectMove;
+    public Transform shopContent;
+    public float shopScrollLerp;
+    public Transform centreShop;
+
     private void Awake()
     {
-
+        if (!GameObject.Find("Manager")) 
+        {
+            StartCoroutine(WaitForSceneLoad());
+        }
     }
 
     private void Start()
@@ -70,6 +80,7 @@ public class MenuScene : MonoBehaviour
 
         //Position Cam on the Focus Menu    
         //SetFocusTo(Manager.Instance.menuFocus);
+        Debug.Log("menuFocus (via Manager): " + Manager.Instance.menuFocus);
         NavigateTo(Manager.Instance.menuFocus);
 
         //Update the gold text at the start
@@ -90,16 +101,28 @@ public class MenuScene : MonoBehaviour
         OnRouteSelect(SaveManager.Instance.state.activeRoute);
         SetRoute(SaveManager.Instance.state.activeRoute);
 
-        // Make buttons bigger for the selected items above
-        skinPanel.GetChild(SaveManager.Instance.state.activeSkinTShirt).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
-        routePanel.GetChild(SaveManager.Instance.state.activeRoute).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
-        
+        // Make buttons bigger for the selected items above //added GetChild(1). as no longer an image. change RectTransform to Transform
+        skinPanel.GetChild(SaveManager.Instance.state.activeSkinTShirt).GetComponent<Transform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
+        routePanel.GetChild(SaveManager.Instance.state.activeRoute).GetComponent<Transform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
+
+        //TODO: NOT WORKING YET!!!!!!!!!
+        //start position in shop
+        float xPosOfCurrentShirt = skinPanel.GetChild(SaveManager.Instance.state.activeSkinTShirt).GetComponent<Transform>().position.x;
+        float move = centreShop.position.x - xPosOfCurrentShirt;//distance to shirt game object
+        Debug.Log("Position of Shirt: " + xPosOfCurrentShirt);
+        Debug.Log("Start - ShirtPos x: " + xPosOfCurrentShirt );
+        Debug.Log("Moving To Item: " + SaveManager.Instance.state.activeSkinTShirt);
+        newPos = new Vector3(shopContent.position.x + move, shopContent.position.y, shopContent.position.z);
+        selectMove = true;
+
+
         //Bypass if set in inspector
         if(BypassThisScene) SceneManager.LoadScene(SkipToThisScene);
     }
 
     private void Update() 
     {
+                debugShopPositions();
         // Fade-in menu
         fadeGroup.alpha = 1 - Time.timeSinceLevelLoad * fadeInSpeed;
 
@@ -142,12 +165,25 @@ public class MenuScene : MonoBehaviour
                 SceneManager.LoadScene(currentIndex);
             }
         }
+        
+        //scroll the Shirt menu
+        if (shopContent.position != newPos && selectMove)
+        {
+            //Debug.Log("Lerp Shop To: " + newPos);
+            shopContent.position = Vector3.Lerp(shopContent.position, newPos, shopScrollLerp * Time.deltaTime);
+        }
+        if (Vector3.Distance(shopContent.position, newPos) < 0.01f)
+        {
+            shopContent.position = newPos;
+            selectMove = false;
+        }
+
     }
     
     //-------------------------------Init-----------------------------
     private void InitShop()
     {
-        Debug.Log("InitLevel Running");
+        Debug.Log("InitShop Running");
         //add click events e.g. 0 to 10 to skin items
         int i = 0;
         foreach (Transform t in skinPanel)
@@ -155,11 +191,15 @@ public class MenuScene : MonoBehaviour
             int currentIndex = i;
             Button b = t.GetComponent<Button>();
             b.onClick.AddListener(()=>OnSkinSelect(currentIndex));
-
-            // set colour of image is owned or not using tert operator
-            Image img = t.GetComponent<Image>();
+            Debug.Log("Shop lister added: " + b);
             
-            img.color = Manager.Instance.playerTshirtColorOptions[currentIndex]; //player color from manager
+            // set colour of image is owned or not using tern operator
+            //Image img = t.GetComponent<Image>(); //no longer using img
+
+            //img.color = Manager.Instance.playerTshirtColorOptions[currentIndex]; //player color from manager - no longer using img
+            Material[] shirtMaterials = t.GetChild(0).GetChild(0).GetComponent<SkinnedMeshRenderer>().materials;
+            //Debug.Log("materials: " + shirtMaterials[2]);
+            shirtMaterials[2].color = Manager.Instance.playerTshirtColorOptions[currentIndex];
             
             //Not using dimming - looked weird as selected colours changed when bought
             //img.color = SaveManager.Instance.IsSkinOwned(i) 
@@ -204,12 +244,6 @@ public class MenuScene : MonoBehaviour
            
            //get the materials of the 2nd gameobjectobject of child of sign
            signMaterials = t.GetChild(0).GetChild(1).GetComponent<MeshRenderer>().materials;
-        
-            //Debug Materials
-            //foreach (Material material in signMaterials) 
-            //{
-            //    Debug.Log("Index: " + i + "Material: " + material);
-            //}
 
             //Is it unlocked?
             if( i <= SaveManager.Instance.state.completedLevel)
@@ -278,11 +312,7 @@ public class MenuScene : MonoBehaviour
         // Get the T-shirt and change skin on the model
         Manager.Instance.playerMaterials = playerBodyInMenu.GetComponent<SkinnedMeshRenderer>().materials;
         
-        //Debug Materials
-        //foreach (Material material in playerMaterials) 
-        //{
-        //    Debug.Log(material);
-        //}
+        //debugMaterials();
 
         //Set color of player T Shirt (3rd material)
         Manager.Instance.playerMaterials[2].color = Manager.Instance.playerTshirtColorOptions[index];
@@ -345,7 +375,7 @@ public class MenuScene : MonoBehaviour
         }
         else 
         {   
-            //make icon bigger
+            //make icon bigger// added GetChild(0). as now 3D object not img
             skinPanel.GetChild(currentIndex).GetComponent<RectTransform>().localScale = new Vector3(1.125f, 1.125f, 1.125f);
             //skinPanel.GetChild(currentIndex).GetComponent<Image>().color = Manager.Instance.playerTshirtColorOptions[currentIndex];
 
@@ -497,20 +527,38 @@ public class MenuScene : MonoBehaviour
         Debug.Log("Selecting Level Button: " + currentIndex);
     }
 
-    
-   IEnumerator LoadSceneAdditive(int buildIndex)
+    private void debugMaterials()
+    {
+        int i = 0;
+        //Debug Materials
+        foreach (Material material in signMaterials) 
         {
-            Debug.Log("Called LoadSceneAdditive. Bulid index:  " + buildIndex);
-            AsyncOperation operation = SceneManager.LoadSceneAsync(buildIndex, LoadSceneMode.Additive);
-    
-            while (!operation.isDone)
-            {
-                Debug.Log("DDOL loading...");
-                yield return null;
-
-            }
-            Debug.Log("DDOL Loaded");            //Done
+            Debug.Log("Index: " + i + "Material: " + material);
         }
+    }
+    
+    private void debugShopPositions()
+    {
+        int i = 0;
+        //Debug Materials
+        if (i <= 10)
+        {
+            float dis = skinPanel.GetChild(i).GetComponent<Transform>().position.x;
+            Debug.Log("Index: " + i + "PositionX: " + dis);
+            i++;
+        }
+    }
+    //load preloader if run from menu
+   private IEnumerator WaitForSceneLoad()
+    {
+        Debug.Log("IE running");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Preloader");
 
-
+        while (!asyncLoad.isDone)
+        {
+            yield return null;//new WaitForSeconds(1);
+        }
+        yield return new WaitForSeconds(1);
+        Debug.Log("2: menuFocus (via Manager): " + Manager.Instance.menuFocus);
+        }
 }
