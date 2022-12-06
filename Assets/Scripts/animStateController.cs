@@ -5,7 +5,7 @@ using UnityEngine;
 public class animStateController : MonoBehaviour
 {
 
-    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, wobbleAnim, wobbleAvoidRailAnim, leaningLeftAnim, leaningRightAnim;
+    public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, popShuvItAnim, wobbleAnim, wobbleAvoidRailAnim, leaningLeftAnim, leaningRightAnim;
     Animator animator;
 
 
@@ -31,6 +31,7 @@ public class animStateController : MonoBehaviour
         leaningRight();
         indyRamp();
         wobbleAvoidRail();
+        popshuvit();
 
 
 
@@ -157,7 +158,32 @@ public class animStateController : MonoBehaviour
 
 
 
+    public void popshuvit()
+    {
+        if (popShuvItAnim == true)
+        {
 
+            animator.SetBool("PopShuvIt?", true);
+
+
+
+        }
+
+        if (popShuvItAnim == !true)
+        {
+
+            animator.SetBool("PopShuvIt?", false);
+
+
+        }
+
+    }
+
+    public void popShuvItEnd()
+    {
+        popShuvItAnim = false;
+
+    }
 
 
 
