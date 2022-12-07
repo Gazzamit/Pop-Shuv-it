@@ -14,6 +14,7 @@ public class animStateController : MonoBehaviour
     public AudioClip indyAudio;
     public AudioClip grindAudio;
     public AudioClip ollieAudio;
+    public AudioClip wobbleAudio;
     public AudioSource skatingAudioSource;
     public AudioClip skatingClip;
 
@@ -111,7 +112,6 @@ public class animStateController : MonoBehaviour
         if (anim5050 == !true)
         {
             audioSource.PlayOneShot(ollieAudio);
-
         }
     }
 
@@ -138,7 +138,6 @@ public class animStateController : MonoBehaviour
 
     public void indyClipTrigger()
     {
-        
         audioSource.PlayOneShot(indyAudio);
     }
 
@@ -239,6 +238,13 @@ public class animStateController : MonoBehaviour
     public void wobbleEnd()
     {
         wobbleAnim = false;
+
+    }
+
+    public void wobbleClipTrigger()
+    {
+
+        audioSource.PlayOneShot(wobbleAudio, 0.4f);
 
     }
 

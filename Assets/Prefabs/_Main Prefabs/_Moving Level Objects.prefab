@@ -12883,7 +12883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa076dd5ceee54740ade248ff29081b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatTempo: 255
+  beatTempo: 400
   hasStarted: 0
   isScrolling: 0
 --- !u!1 &7230745066476949797
