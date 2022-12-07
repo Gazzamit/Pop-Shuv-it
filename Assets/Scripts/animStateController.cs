@@ -10,11 +10,12 @@ public class animStateController : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip popShuvItAudio;
+    public AudioClip kickflipAudio;
+    public AudioClip indyAudio;
+    public AudioClip grindAudio;
+    public AudioClip ollieAudio;
     public AudioSource skatingAudioSource;
     public AudioClip skatingClip;
-
-
-  
 
 
 
@@ -23,9 +24,6 @@ public class animStateController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetBool("StartGame?", false);
-        
-
-       
 
     }
 
@@ -47,6 +45,7 @@ public class animStateController : MonoBehaviour
     }
 
 
+    //starts the animation of the player jumping on the skateboard
     public void startPlayingAnimation()
     {
         if (startPlayAnim == true)
@@ -56,176 +55,154 @@ public class animStateController : MonoBehaviour
             if (skatingAudioSource.isPlaying == !true)
             {
                 skatingAudioSource.PlayOneShot(skatingClip);
-
             }
-       
         }
-        
     }
 
 
-
+    //triggers kickflip animation
     public void kickflip()
     {
         if (kickflipAnim == true)
         {
-            
             animator.SetBool("Kickflip?", true);
-            
-
-       
         }
 
         if (kickflipAnim == !true)
         {
-
             animator.SetBool("Kickflip?", false);
-          
-
         }
-
     }
 
     public void kickflipEnd()
     {
         kickflipAnim = false;
+    }
 
+    public void kickflipClipTrigger()
+    {
+        audioSource.PlayOneShot(kickflipAudio);
     }
 
 
+
+
+    //triggers ollie animation
     public void ollie()
     {
         if (ollieAnim == true)
         {
-
             animator.SetBool("Ollie?", true);
-
-
-
         }
 
         if (ollieAnim == !true)
         {
-
             animator.SetBool("Ollie?", false);
-
-
         }
-
     }
 
     public void ollieEnd()
     {
         ollieAnim = false;
-
     }
 
+    public void ollieClipTrigger()
+    {
+        if (anim5050 == !true)
+        {
+            audioSource.PlayOneShot(ollieAudio);
+
+        }
+    }
+
+
+
+    //triggers indy animation
     public void indy()
     {
         if (indyAnim == true)
         {
             animator.SetBool("Indy?", true);
-
         }
 
         if (indyAnim == !true)
         {
             animator.SetBool("Indy?", false);
-
         }
-
-
-
     }
 
     public void indyEnd()
     {
         indyAnim = false;
+    }
 
+    public void indyClipTrigger()
+    {
+        
+        audioSource.PlayOneShot(indyAudio);
     }
 
 
+
+
+    //triggers indy off ramp animation
     public void indyRamp()
     {
         if (indyRampAnim == true)
         {
             animator.SetBool("IndyRamp?", true);
-
         }
 
         if (indyRampAnim == !true)
         {
             animator.SetBool("IndyRamp?", false);
-
         }
-
-
-
     }
 
     public void indyRampEnd()
     {
         indyRampAnim = false;
-
     }
 
 
-
+    //triggers popshuvit animation
     public void popshuvit()
     {
         if (popShuvItAnim == true)
         {
-
             animator.SetBool("PopShuvIt?", true);
-
-            
-            
-
-
         }
 
         if (popShuvItAnim == !true)
         {
-
             animator.SetBool("PopShuvIt?", false);
-
-
         }
-
     }
 
     public void popShuvItEnd()
     {
         popShuvItAnim = false;
-
     }
 
     public void popShuvItClipTrigger()
     {
         audioSource.PlayOneShot(popShuvItAudio);
-
-
     }
 
 
 
-
+    //triggers grind animation
     public void grind5050()
     {
         if (anim5050 == true)
         {
             animator.SetBool("5050?", true);
-
         }
 
         if (anim5050 == !true)
         {
             animator.SetBool("5050?", false);
-
         }
-
-
-
     }
 
     public void anim5050End()
@@ -234,22 +211,29 @@ public class animStateController : MonoBehaviour
 
     }
 
+    public void grindClipTrigger()
+    {
 
+        audioSource.PlayOneShot(grindAudio);
+
+    }
+
+
+
+
+
+    //triggers wobble animation
     public void wobble()
     {
         if (wobbleAnim == true)
         {
             animator.SetBool("Wobble?", true);
-
         }
 
         if (wobbleAnim == !true)
         {
             animator.SetBool("Wobble?", false);
-
         }
-
-
     }
 
     public void wobbleEnd()
@@ -259,88 +243,69 @@ public class animStateController : MonoBehaviour
     }
 
 
+
+    //triggers a wobble animation that avoids the grind rail
     public void wobbleAvoidRail()
     {
         if (wobbleAvoidRailAnim == true)
         {
             animator.SetBool("WobbleAvoidRail?", true);
-
         }
 
         if (wobbleAvoidRailAnim == !true)
         {
             animator.SetBool("WobbleAvoidRail?", false);
-
         }
-
-
     }
 
     public void wobbleAvoidRailEnd()
     {
         wobbleAvoidRailAnim = false;
-
     }
 
 
 
+
+
+    //triggers leaning left animation
     public void leaningLeft()
     {
         if (leaningLeftAnim == true)
         {
-
             animator.SetBool("LeaningLeft?", true);
-
-
-
         }
 
         if (leaningLeftAnim == !true)
         {
-
             animator.SetBool("LeaningLeft?", false);
-
-
         }
-
     }
 
     public void leaningLeftEnd()
     {
         leaningLeftAnim = false;
-
     }
 
 
 
+    //triggers leaning right animation
     public void leaningRight()
     {
         if (leaningRightAnim == true)
         {
-
             animator.SetBool("LeaningRight?", true);
-
-
-
         }
 
         if (leaningRightAnim == !true)
         {
-
             animator.SetBool("LeaningRight?", false);
-
-
         }
-
     }
 
     public void leaningRightEnd()
     {
         leaningRightAnim = false;
-
     }
-
-
 
 
 
