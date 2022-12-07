@@ -15,8 +15,12 @@ public class animStateController : MonoBehaviour
     public AudioClip grindAudio;
     public AudioClip ollieAudio;
     public AudioClip wobbleAudio;
+    public AudioClip wobbleAvoidRailAudio;
+    public AudioClip leaningAudio;
     public AudioSource skatingAudioSource;
     public AudioClip skatingClip;
+    public AudioClip jumpOnAudio;
+
 
 
 
@@ -55,9 +59,15 @@ public class animStateController : MonoBehaviour
 
             if (skatingAudioSource.isPlaying == !true)
             {
+             
                 skatingAudioSource.PlayOneShot(skatingClip);
             }
         }
+    }
+
+    public void startSkatingTrigger()
+    {
+        skatingAudioSource.PlayOneShot(jumpOnAudio);
     }
 
 
@@ -212,8 +222,11 @@ public class animStateController : MonoBehaviour
 
     public void grindClipTrigger()
     {
-
-        audioSource.PlayOneShot(grindAudio);
+        if (anim5050 == true)
+        {
+            audioSource.PlayOneShot(grindAudio);
+        }
+        
 
     }
 
@@ -269,6 +282,13 @@ public class animStateController : MonoBehaviour
         wobbleAvoidRailAnim = false;
     }
 
+    public void wobbleAvoidRailClipTrigger()
+    {
+
+        audioSource.PlayOneShot(wobbleAvoidRailAudio, 0.4f);
+
+    }
+
 
 
 
@@ -292,6 +312,12 @@ public class animStateController : MonoBehaviour
         leaningLeftAnim = false;
     }
 
+    public void leaningClipTrigger()
+    {
+
+        audioSource.PlayOneShot(leaningAudio);
+
+    }
 
 
     //triggers leaning right animation
