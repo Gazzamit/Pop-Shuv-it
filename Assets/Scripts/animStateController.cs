@@ -8,12 +8,23 @@ public class animStateController : MonoBehaviour
     public bool startPlayAnim, kickflipAnim, ollieAnim, indyAnim, indyRampAnim, anim5050, popShuvItAnim, wobbleAnim, wobbleAvoidRailAnim, leaningLeftAnim, leaningRightAnim;
     Animator animator;
 
+    public AudioSource audioSource;
+    public AudioClip popShuvItAudio;
+    public AudioSource skatingAudioSource;
+    public AudioClip skatingClip;
+
+
+  
+
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("StartGame?", false);
+        
+
        
 
     }
@@ -33,9 +44,6 @@ public class animStateController : MonoBehaviour
         wobbleAvoidRail();
         popshuvit();
 
-
-
-
     }
 
 
@@ -45,12 +53,17 @@ public class animStateController : MonoBehaviour
         {
             animator.SetBool("StartGame?", true);
 
+            if (skatingAudioSource.isPlaying == !true)
+            {
+                skatingAudioSource.PlayOneShot(skatingClip);
+
+            }
+       
         }
-
-
+        
     }
 
-    
+
 
     public void kickflip()
     {
@@ -165,6 +178,8 @@ public class animStateController : MonoBehaviour
 
             animator.SetBool("PopShuvIt?", true);
 
+            
+            
 
 
         }
@@ -184,6 +199,14 @@ public class animStateController : MonoBehaviour
         popShuvItAnim = false;
 
     }
+
+    public void popShuvItClipTrigger()
+    {
+        audioSource.PlayOneShot(popShuvItAudio);
+
+
+    }
+
 
 
 
