@@ -785,6 +785,7 @@ public class gameManager : MonoBehaviour
         //startPlayingALevel = false;
         theBS.hasStarted = false;
         music.Stop();
+
     }
 
     public void StartLevelPlay()

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6733296013753945629}
   m_Layer: 6
   m_Name: Up Arrow Obj
-  m_TagString: Arrow Down
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,11 +30,11 @@ Transform:
   m_GameObject: {fileID: 5516241101094047411}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -9, y: -1.11, z: 17}
-  m_LocalScale: {x: 50, y: 67.71818, z: 43.789196}
+  m_LocalScale: {x: 50, y: 67.71818, z: 43.7892}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!33 &8100193660779469740
 MeshFilter:
@@ -54,7 +54,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -130,11 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRb: {fileID: 0}
   animStateControl: {fileID: 0}
-  earlyHitPos: 1.9
-  centreHitPos: -0.63
-  lateHitPos: -2
-  normalEffect: {fileID: 0}
-  goodEffect: {fileID: 0}
-  perfectEffect: {fileID: 0}
-  missEffect: {fileID: 0}
+  earlyHitPos: 1.34
+  centreHitPos: -0.96
+  lateHitPos: -2.78
+  normalEffect: {fileID: 861541042725815941, guid: 9c182cb2aa5ad4abf87ed1fc6ca86f97, type: 3}
+  goodEffect: {fileID: 5082830382237197120, guid: 8b6668bcd3d054eccb2d754e0583d8d8, type: 3}
+  perfectEffect: {fileID: 3864207848644847806, guid: 67570403bd2154f6a87ca14157d78f80, type: 3}
+  missEffect: {fileID: 8107295890765367356, guid: 638bcef82a80b41fda6e9f664fab3b20, type: 3}
   effectsOffset: {x: 0, y: 0, z: 0}
