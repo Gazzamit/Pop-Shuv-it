@@ -66,9 +66,15 @@ public class SaveManager : MonoBehaviour
     }
 
     // Skin owned?
-    public bool IsSkinOwned(int index)
+    public bool IsSkinShirtOwned(int index)
     {
-        return (state.skinOwned & (1 << index)) != 0; //bit operators 0000 - return 1 if owned, 0 if not
+        return (state.skinShirtOwned & (1 << index)) != 0; //bit operators 0000 - return 1 if owned, 0 if not
+    }
+
+    //board owned?
+    public bool IsSkinBoardOwned(int index)
+    {
+        return (state.skinBoardOwned & (1 << index)) != 0; //bit operators 0000 - return 1 if owned, 0 if not
     }
 
     // Route owned?
@@ -78,13 +84,30 @@ public class SaveManager : MonoBehaviour
     }
 
     //attempt to buy skin / route (return true / false)
-    public bool BuySkin(int index, int cost)
+    public bool BuySkinShirt(int index, int cost)
     {
         if (state.token >= cost)
         {
             //enough tokens
             state.token -= cost;
-            UnlockSkin(index);
+            UnlockSkinShirt(index);
+            Save(); //save progress
+            return true;
+        }
+        else
+        {
+            //not enough tokens
+            return false;
+        }
+    }
+
+    public bool BuySkinBoard(int index, int cost)
+    {
+        if (state.token >= cost)
+        {
+            //enough tokens
+            state.token -= cost;
+            UnlockSkinBoard(index);
             Save(); //save progress
             return true;
         }
@@ -112,10 +135,15 @@ public class SaveManager : MonoBehaviour
     }
 
     //unlock skin or route
-    public void UnlockSkin(int index)
+    public void UnlockSkinShirt(int index)
     {
         //toggle on the bit at index (bit operator)
-        state.skinOwned |= 1 << index;
+        state.skinShirtOwned |= 1 << index;
+    }
+    public void UnlockSkinBoard(int index)
+    {
+        //toggle on the bit at index (bit operator)
+        state.skinBoardOwned |= 1 << index;
     }
     public void UnlockRoute(int index)
     {

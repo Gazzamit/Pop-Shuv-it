@@ -39,6 +39,7 @@ public class gameManager : MonoBehaviour
 
     public GameObject player;
     public GameObject playerBody;
+    public GameObject playerBoard;
     public GameObject ArrowsParent;
     public GameObject resultsScreen;
     public GameObject pauseScreen;
@@ -174,7 +175,8 @@ public class gameManager : MonoBehaviour
         fadeGroup.alpha = 1;
 
         //This usess in skin set in the Menuscene - only works if loaded from the preloader
-        SetPlayerSkin();
+        SetPlayerSkinBody();
+        SetPlayerSkinBoard();
     }
 
     // Update is called once per frame
@@ -453,9 +455,10 @@ public class gameManager : MonoBehaviour
             }
             else if (arrowMissedCounter == LooseLifeAtCount[3])
             {
+                //TDO RESET BELOW TO 0 AND TRUE
                 livesIcons[3].SetActive(false); //0 lives
-                showFailed = true;
-                livesLeft = 0; //lives now 0
+                showFailed = false;
+                livesLeft = 1; //lives now 0
             }
         }
 
@@ -966,12 +969,23 @@ public class gameManager : MonoBehaviour
 
     ///////////////////////
     //set skin for player//
-    public void SetPlayerSkin()
+    public void SetPlayerSkinBody()
     {
-        //the array playermaterials is set here and works with donotdestroyonload
+        //the array playerbodymaterials is set here and works with donotdestroyonload
         int index = SaveManager.Instance.state.activeSkinTShirt; //Get saved T-shirt colour index
         Debug.Log("T-Shirt ID: " + index);
-        Manager.Instance.playerMaterials = playerBody.GetComponent<SkinnedMeshRenderer>().materials; //get current player materials
-        Manager.Instance.playerMaterials[2].color = Manager.Instance.playerTshirtColorOptions[index]; //set colour of material 2 to colour index of the colours set up in inspector
+        Manager.Instance.playerBodyMaterials = playerBody.GetComponent<SkinnedMeshRenderer>().materials; //get current player materials
+        Manager.Instance.playerBodyMaterials[2].color = Manager.Instance.playerTshirtColorOptions[index]; //set colour of material 2 to colour index of the colours set up in inspector
+    }
+    
+    ///////////////////////
+    //set skin for board//
+    public void SetPlayerSkinBoard()
+    {
+        //the array playerboardmaterials is set here and works with donotdestroyonload
+        int index = SaveManager.Instance.state.activeSkinBoard; //Get saved board colour index
+        Debug.Log("Board ID: " + index);
+        Manager.Instance.playerBoardMaterials = playerBoard.GetComponent<MeshRenderer>().materials; //get current board materials
+        Manager.Instance.playerBoardMaterials[0].color = Manager.Instance.playerBoardColorOptions[index]; //set colour of material 1 to colour index of the colours set up in inspector
     }
 }

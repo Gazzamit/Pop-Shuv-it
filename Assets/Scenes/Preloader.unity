@@ -433,6 +433,17 @@ MonoBehaviour:
   - {r: 0.06561896, g: 0.5471698, b: 0, a: 1}
   - {r: 1, g: 0.9125972, b: 0.504717, a: 1}
   - {r: 0.9056604, g: 0.7875308, b: 0, a: 1}
+  playerBoardColorOptions:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.46226418, g: 0, b: 0, a: 1}
+  - {r: 0.5943396, g: 0, b: 0.59432656, a: 1}
+  - {r: 0, g: 0.054734178, b: 0.5754717, a: 1}
+  - {r: 0, g: 0.5283019, b: 0.4716248, a: 1}
+  - {r: 0, g: 0.754717, b: 0.18343818, a: 1}
+  - {r: 0.6157721, g: 0.6698113, b: 0, a: 1}
+  - {r: 0.6792453, g: 0.38598102, b: 0, a: 1}
+  - {r: 0.21034844, g: 0, b: 0.5377358, a: 1}
+  - {r: 0.49056602, g: 0, b: 0.24575014, a: 1}
 --- !u!4 &644785166
 Transform:
   m_ObjectHideFlags: 0
@@ -754,11 +765,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeGroup: {fileID: 909084790}
-  BypassThisScene: 1
-  minLogoTime: 0.5
+  BypassThisScene: 0
+  minLogoTime: 1
   gameLoadTime: 0
-  fadeInTime: 0.5
-  fadeOutTime: 0.5
+  fadeInTime: 1
+  fadeOutTime: 1
 --- !u!1 &1286892000
 GameObject:
   m_ObjectHideFlags: 0

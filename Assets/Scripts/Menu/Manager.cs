@@ -8,8 +8,10 @@ public class Manager : MonoBehaviour
     public int currentLevel = 0; // know which level the player clicked on
     public int menuFocus = 0; // return from game menu focus
     
-    public Material[] playerMaterials;
+    public Material[] playerBodyMaterials;
+    public Material[] playerBoardMaterials;
     public Color[] playerTshirtColorOptions = new Color[10];
+    public Color[] playerBoardColorOptions = new Color[10];
 
     private void Awake() 
     {
