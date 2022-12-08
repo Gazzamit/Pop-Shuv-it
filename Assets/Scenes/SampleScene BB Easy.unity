@@ -502,56 +502,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1486367567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4391019324376364956, guid: 6a61b2f5690154f68acaa04525c627e7, type: 3}
-  m_PrefabInstance: {fileID: 5077971701492491459}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1486367569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486367567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
---- !u!1 &1583360878 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5077971701057132122, guid: 6a61b2f5690154f68acaa04525c627e7, type: 3}
-  m_PrefabInstance: {fileID: 5077971701492491459}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1583360880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583360878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &1630584947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 397914615, guid: 37acffc82a55b4b7280edc79d99e63aa, type: 3}
@@ -2262,18 +2212,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7521781464007706372, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7521781464007706372, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0be94e7b6c3fdb94c8cfa9099b184fc9, type: 3}
-    - target: {fileID: 7521781464007706372, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: -5610951869969168671, guid: f31618110aecd4fe287d876a2441a91e, type: 2}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 2195c6eff677c433f9c2c41350437780, type: 3}
