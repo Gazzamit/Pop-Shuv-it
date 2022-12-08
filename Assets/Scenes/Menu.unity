@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18388319, g: 0.22887449, b: 0.30220547, a: 1}
+  m_IndirectSpecularColor: {r: 0.18378504, g: 0.22876294, b: 0.30208296, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7683,7 +7683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 744dfe844f0f44b9191b729b8c51dc24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BypassThisScene: 1
+  BypassThisScene: 0
   SkipToThisScene: SampleScene BB Easy
   fadeGroup: {fileID: 1098672857}
   menuLerp: 0.01

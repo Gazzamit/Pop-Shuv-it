@@ -457,8 +457,8 @@ public class gameManager : MonoBehaviour
             {
                 //TDO RESET BELOW TO 0 AND TRUE
                 livesIcons[3].SetActive(false); //0 lives
-                showFailed = false;
-                livesLeft = 1; //lives now 0
+                showFailed = true;
+                livesLeft = 0; //lives now 0
             }
         }
 

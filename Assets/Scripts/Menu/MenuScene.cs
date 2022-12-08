@@ -101,7 +101,7 @@ public class MenuScene : MonoBehaviour
     private void Start()
     {   
         // $$ TEMP $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-        SaveManager.Instance.state.token = 20; 
+        //SaveManager.Instance.state.token = 20; 
 
         //Find menu cam
         menuCam = FindObjectOfType<MenuCamera>();
