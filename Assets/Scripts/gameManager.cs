@@ -158,7 +158,9 @@ public class gameManager : MonoBehaviour
         b[8].onClick.AddListener(() => EnterNameOKButtonClick());
         //Debug.Log("Init EnterNameOKButtonClick: " + GameObjectWithButton[8].transform.GetChild(0).GetChild(4).GetChild(4).name);
 
-        Selection.activeGameObject = gameObject;
+
+        //dunno what ths is for???
+        //Selection.activeGameObject = gameObject;
 
         instance = this;
 

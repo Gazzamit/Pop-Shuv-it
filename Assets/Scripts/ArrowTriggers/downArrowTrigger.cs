@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
-public class leftArrowTrigger : MonoBehaviour
+public class downArrowTrigger : MonoBehaviour
 {
     public Rigidbody playerRb;
     public animStateController animStateControl;
@@ -13,23 +12,22 @@ public class leftArrowTrigger : MonoBehaviour
     public float centreHitPos = -0.63f;
     public float lateHitPos = -2.0f;
     private float earlyHitRange, lateHitRange = 0f, hitPosZ, perPercent, goodPercent;
-    
+
     public GameObject normalEffect, goodEffect, perfectEffect, missEffect; 
     public Vector3 effectsOffset; // Normal / Good / Perfect text
 
     private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Arrow Trigger"))
+    {   
+        if (collision.gameObject.CompareTag("Arrow Trigger")) // Do not change
         {
             //Debug.Log(collision.gameObject.name);
-            gameObject.tag = "Left Arrow";
+            gameObject.tag = "Down Arrow"; //This script is a component of a Arrow Prefab with similar name
 
-            
         }
 
-        if (collision.gameObject.CompareTag("Left Trigger"))
+        if (collision.gameObject.CompareTag("Down Trigger")) //Down arrow needs down trigger for correct movement
         {
-            if(dragging.touchSide == "Left")
+            if(dragging.touchSide == "Left") //Set to Left or Right to make the effect appear that side
             {
                 effectsOffset = new Vector3 (-4.62f,2.43f,-5.43f); // Left offset for perfect / good / normal text
             }
@@ -37,7 +35,6 @@ public class leftArrowTrigger : MonoBehaviour
             {
                 effectsOffset = new Vector3 (4.62f,2.43f,-5.43f); // Right offset for perfect / good / normal text
             }
-
             earlyHitRange = earlyHitPos - centreHitPos;
             lateHitRange = lateHitPos - centreHitPos;
             perPercent = gameManager.perfectPercent;
@@ -70,36 +67,35 @@ public class leftArrowTrigger : MonoBehaviour
                 Instantiate(normalEffect, effectsOffset, Quaternion.identity);
             }
 
-
-
-
-            //call move left here
-
-            
-
             // put in a point scoring animation and destroy object here
             gameObject.SetActive(false);
-            
+
+            // grind anim here
+            animStateControl.anim5050 = true;
+            animStateControl.ollieAnim = true;
+
+
+
+
         }
 
-        if (collision.gameObject.CompareTag("Right Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Down Trigger"))
+        //This is a list of incorrect movements
+        if (collision.gameObject.CompareTag("Left Trigger") || collision.gameObject.CompareTag("Up Trigger") || collision.gameObject.CompareTag("Right Trigger"))
         {
-            //put in a destroy animation and end combo trigger here
             gameManager.instance.WrongDirection();
+
+            //put in a destroy animation and end combo trigger here
             gameObject.SetActive(false);
-           
         }
 
+        //This triggers after anything hits it on either side. Don not chenge.
         if (collision.gameObject.CompareTag("Missed Arrow Trigger"))
         {
-            //Have a missed arrow and end combo trigger here
-            //playerRb.transform.Translate(-3.0f, 0.0f, 0.0f);
-            animStateControl.wobbleAnim = true;
             gameManager.instance.NoteMissed();
+            animStateControl.wobbleAvoidRailAnim = true;
+
+            //Have a missed arrow and end combo trigger here
             gameObject.SetActive(false);
-           
         }
     }
-
-
 }
