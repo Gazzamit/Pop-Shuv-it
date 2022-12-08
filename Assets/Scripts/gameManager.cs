@@ -117,9 +117,9 @@ public class gameManager : MonoBehaviour
         //Debug.Log("Init PauseOptionsClick: " + GameObjectWithButton[1].name);
 
         //end level now TEMP buton
-        GameObjectWithButton[2] = GameObject.Find("ParentendTheLevelNowButtonClick");
-        b[2] = GameObjectWithButton[2].transform.GetChild(0).GetComponent<Button>();
-        b[2].onClick.AddListener(() => endTheLevelNowButtonClick());
+       // GameObjectWithButton[2] = GameObject.Find("ParentendTheLevelNowButtonClick");
+       // b[2] = GameObjectWithButton[2].transform.GetChild(0).GetComponent<Button>();
+       // b[2].onClick.AddListener(() => endTheLevelNowButtonClick());
         //Debug.Log("Init endTheLevelNowButtonClick: " + GameObjectWithButton[2].transform.GetChild(0).name);
 
         //Unlock next level
