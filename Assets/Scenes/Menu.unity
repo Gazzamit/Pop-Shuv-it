@@ -7686,7 +7686,7 @@ MonoBehaviour:
   BypassThisScene: 0
   SkipToThisScene: SampleScene BB Easy
   fadeGroup: {fileID: 1098672857}
-  menuLerp: 0.01
+  menuLerp: 0.05
   menuContainer: {fileID: 1021004932}
   skinShirtPanel: {fileID: 1584292752}
   skinBoardPanel: {fileID: 1677098456}
@@ -31469,7 +31469,7 @@ Camera:
   m_BackGroundColor: {r: 0.7028302, g: 0.818202, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50

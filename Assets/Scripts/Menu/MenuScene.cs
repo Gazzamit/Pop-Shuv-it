@@ -190,8 +190,8 @@ public class MenuScene : MonoBehaviour
                 //enter level
                 //SceneManager.LoadScene(SceneToLoad); //scene selected in Inspector
                 int currentIndex = Manager.Instance.currentLevel;
-                Debug.Log("Loading Scene: " + currentIndex);
-                SceneManager.LoadScene(currentIndex);
+                Debug.Log("Loading Scene: " + currentIndex + 1);
+                SceneManager.LoadScene(currentIndex + 1);
             }
         }
         

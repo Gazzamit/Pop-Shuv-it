@@ -159,8 +159,10 @@ public class gameManager : MonoBehaviour
         //Debug.Log("Init EnterNameOKButtonClick: " + GameObjectWithButton[8].transform.GetChild(0).GetChild(4).GetChild(4).name);
 
 
-        //dunno what ths is for???
-        //Selection.activeGameObject = gameObject;
+        //select game object only if in unity editor
+         #if UNITY_EDITOR 
+        Selection.activeGameObject = gameObject;
+         #endif
 
         instance = this;
 
